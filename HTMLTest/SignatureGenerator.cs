@@ -67,7 +67,7 @@ namespace SignatureGeneratorProgram
 
                 if (emailRegistryValue != null)
                 {
-                    string emailValue = emailRegistryValue.ToString();
+                    string emailValue = emailRegistryValue.ToString().ToLower();
 
                     if (emailValue == email)
                     {
