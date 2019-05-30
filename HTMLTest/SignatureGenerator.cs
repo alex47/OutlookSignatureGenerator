@@ -55,29 +55,57 @@ namespace SignatureGeneratorProgram
             Properties.Resources.image001.Save(signatureFilesOutputLocation + "/image001.png");
         }
 
-        public bool updateRegistry(string signatureName, string email)
+        // returns 0 if success
+        // returns 1 if account not found
+        // returns 2 if outlook not found
+        public int updateRegistry(string signatureName, string email)
         {
             string outlookVersionString = Registry.GetValue(@"HKEY_CLASSES_ROOT\Outlook.Application\CurVer", "", "0").ToString();
-            int outlookVersion = Convert.ToInt32(outlookVersionString.Substring(outlookVersionString.LastIndexOf(".") + 1));
-            bool accountFound = false;
 
-            for (int i = 1; i < 10; i++)
+            if (String.IsNullOrEmpty(outlookVersionString))
             {
-                object emailRegistryValue = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Office\" + outlookVersion + @".0\Outlook\Profiles\Outlook\9375CFF0413111d3B88A00104B2A6676\0000000" + i, "Account Name", "");
+                return 2;
+            }
 
-                if (emailRegistryValue != null)
+            int outlookVersion = Convert.ToInt32(outlookVersionString.Substring(outlookVersionString.LastIndexOf(".") + 1));
+            int accountFound = 1;
+
+            string outlookProfilePath;
+
+            // Outlook 2013 and newer
+            if (outlookVersion >= 15)
+            {
+                outlookProfilePath = @"Software\Microsoft\Office\" + outlookVersion + @".0\Outlook\Profiles";
+            }
+            // Outlook 2010 and older
+            else
+            {
+                outlookProfilePath = @"Software\Microsoft\Windows NT\CurrentVersion\Windows Messaging Subsystem\Profiles";
+            }
+
+            string[] outlookProfiles = Registry.CurrentUser.OpenSubKey(outlookProfilePath).GetSubKeyNames();
+
+            foreach (string outlookProfile in outlookProfiles)
+            {
+                string outlookAccountPath =  outlookProfilePath + @"\" + outlookProfile + @"\9375CFF0413111d3B88A00104B2A6676";
+                string[] outlookAccounts = Registry.CurrentUser.OpenSubKey(outlookAccountPath).GetSubKeyNames();
+
+                foreach (string outlookAccount in outlookAccounts)
                 {
-                    string emailValue = emailRegistryValue.ToString().ToLower();
+                    string outlookAccountIter = @"HKEY_CURRENT_USER\" + outlookAccountPath + @"\" + outlookAccount;
+                    object emailRegistryValue = Registry.GetValue(outlookAccountIter, "Account Name", "");
 
-                    if (emailValue == email)
+                    if (emailRegistryValue != null)
                     {
-                        accountFound = true;
+                        if (emailRegistryValue.ToString().ToLower() == email)
+                        {
+                            Registry.SetValue(outlookAccountIter, "New Signature", signatureName, RegistryValueKind.String);
+                            Registry.SetValue(outlookAccountIter, "Reply-Forward Signature", signatureName, RegistryValueKind.String);
+                            Registry.SetValue(outlookAccountIter, "Reply-Forward", signatureName, RegistryValueKind.String);
 
-                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Office\" + outlookVersion + @".0\Outlook\Profiles\Outlook\9375CFF0413111d3B88A00104B2A6676\0000000" + i, "New Signature", signatureName, RegistryValueKind.String);
-                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Office\" + outlookVersion + @".0\Outlook\Profiles\Outlook\9375CFF0413111d3B88A00104B2A6676\0000000" + i, "Reply-Forward Signature", signatureName, RegistryValueKind.String);
-                        Registry.SetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Office\" + outlookVersion + @".0\Outlook\Profiles\Outlook\9375CFF0413111d3B88A00104B2A6676\0000000" + i, "Reply-Forward", signatureName, RegistryValueKind.String);
-
-                        break;
+                            accountFound = 0;
+                            break;
+                        }
                     }
                 }
             }

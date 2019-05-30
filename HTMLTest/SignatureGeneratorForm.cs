@@ -9,10 +9,14 @@ namespace SignatureGeneratorProgram
         string finishButtonErrorMessageCaption;
         string finishButtonDoneMessage;
         string finishButtonDoneMessageCaption;
-        string outlookRegistryUpdateError;
-        string outlookRegistryUpdateErrorCaption;
+        string outlookRegistryUpdateError1;
+        string outlookRegistryUpdateErrorCaption1;
+        string outlookRegistryUpdateError2;
+        string outlookRegistryUpdateErrorCaption2;
 
         string emailSuffix = "@hanonsystems.com";
+
+        bool comboBoxPhoneNumberBeginningChangedManually;
 
         SignatureGenerator signatureGenerator = new SignatureGenerator();
 
@@ -37,6 +41,8 @@ namespace SignatureGeneratorProgram
 
             comboBoxPhoneNumberBeginning.SelectedIndex = 0;
             comboBoxMobileNumberBeginning.SelectedIndex = 1;
+
+            comboBoxPhoneNumberBeginningChangedManually = false;
 
             textBoxUsername.Text = Environment.UserName.ToLower();
 
@@ -84,8 +90,10 @@ namespace SignatureGeneratorProgram
                     finishButtonErrorMessageCaption = "Error";
                     finishButtonDoneMessage = "Your Outlook signature has been successfully generated.\nPlease restart Outlook.";
                     finishButtonDoneMessageCaption = "Done";
-                    outlookRegistryUpdateError = "Please log in to Outlook and then try again.";
-                    outlookRegistryUpdateErrorCaption = "Outlook account not found";
+                    outlookRegistryUpdateError1 = "Please log in to Outlook and then try again.";
+                    outlookRegistryUpdateErrorCaption1 = "Outlook account not found";
+                    outlookRegistryUpdateError2 = "Please make sure Outlook is installed.";
+                    outlookRegistryUpdateErrorCaption2 = "Outlook not found";
 
                     // Default greeting checkboxes
                     checkBoxGreetingHungarian.Checked = false;
@@ -128,8 +136,10 @@ namespace SignatureGeneratorProgram
                     finishButtonErrorMessageCaption = "Hiba";
                     finishButtonDoneMessage = "Az Outlook aláírásod sikeresen elkészült.\nKérlek Indítsd újra az Outlookot.";
                     finishButtonDoneMessageCaption = "Kész";
-                    outlookRegistryUpdateError = "Kérlek jelentkezz be az Outlookba, majd próbálkozz újra.";
-                    outlookRegistryUpdateErrorCaption = "Az Outlook fiók nem található";
+                    outlookRegistryUpdateError1 = "Kérlek jelentkezz be az Outlookba, majd próbálkozz újra.";
+                    outlookRegistryUpdateErrorCaption1 = "Az Outlook fiók nem található";
+                    outlookRegistryUpdateError2 = "Bizonyosodj meg róla, hogy az Outlook telepítve van.";
+                    outlookRegistryUpdateErrorCaption2 = "Az Outlook nem található";
 
                     // Default greeting checkboxes
                     checkBoxGreetingHungarian.Checked = true;
@@ -190,6 +200,20 @@ namespace SignatureGeneratorProgram
                 signatureGenerator.updateSignatureValue("%phone%", comboBoxPhoneNumberBeginning.Text + " ___");
             } else
             {
+                int parsedNumber;
+
+                if (int.TryParse(textBoxPhone.Text, out parsedNumber) && !comboBoxPhoneNumberBeginningChangedManually)
+                {
+                    if (parsedNumber < 500)
+                    {
+                        comboBoxPhoneNumberBeginning.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        comboBoxPhoneNumberBeginning.SelectedIndex = 1;
+                    }
+                }
+
                 signatureGenerator.updateSignatureValue("%phone%", comboBoxPhoneNumberBeginning.Text + " " + textBoxPhone.Text);
             }
             
@@ -302,16 +326,29 @@ namespace SignatureGeneratorProgram
 
             // Set the default signature for Outlook in the registry
             // Throw an error if we can't find the Outlook account for the specified username locally
-            if(!signatureGenerator.updateRegistry(textBoxUsername.Text + "_generated_signature", textBoxUsername.Text + emailSuffix))
-            {
-                MessageBox.Show(outlookRegistryUpdateError, outlookRegistryUpdateErrorCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else
-            {
-                // Everything went correctly
-                signatureGenerator.exportSignature(textBoxUsername.Text + "_generated_signature");
 
-                MessageBox.Show(finishButtonDoneMessage, finishButtonDoneMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Application.Exit();
+            int registryResult = signatureGenerator.updateRegistry(textBoxUsername.Text + "_generated_signature", textBoxUsername.Text + emailSuffix);
+
+            switch (registryResult)
+            {
+                case 0:
+                    // Everything went correctly
+                    signatureGenerator.exportSignature(textBoxUsername.Text + "_generated_signature");
+
+                    MessageBox.Show(finishButtonDoneMessage, finishButtonDoneMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                    break;
+
+                case 1:
+                    MessageBox.Show(outlookRegistryUpdateError1, outlookRegistryUpdateErrorCaption1, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                case 2:
+                    MessageBox.Show(outlookRegistryUpdateError2, outlookRegistryUpdateErrorCaption2, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                default:
+                    break;
             }
         }
 
@@ -325,5 +362,10 @@ namespace SignatureGeneratorProgram
             setLanguage(displayLanguage.HUNGARIAN);
         }
 
+        private void ComboBoxPhoneNumberBeginning_SelectedValueChanged(object sender, EventArgs e)
+        {
+            comboBoxPhoneNumberBeginningChangedManually = true;
+            updateHtmlPreviewPage(null, null);
+        }
     }
 }

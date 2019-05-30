@@ -154,7 +154,7 @@
             this.comboBoxPhoneNumberBeginning.Size = new System.Drawing.Size(43, 21);
             this.comboBoxPhoneNumberBeginning.TabIndex = 0;
             this.comboBoxPhoneNumberBeginning.TabStop = false;
-            this.comboBoxPhoneNumberBeginning.SelectedValueChanged += new System.EventHandler(this.updateHtmlPreviewPage);
+            this.comboBoxPhoneNumberBeginning.SelectedValueChanged += new System.EventHandler(this.ComboBoxPhoneNumberBeginning_SelectedValueChanged);
             // 
             // labelConstCountryPreNumber
             // 
