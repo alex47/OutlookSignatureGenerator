@@ -207,10 +207,12 @@ namespace SignatureGeneratorProgram
                     if (parsedNumber < 500)
                     {
                         comboBoxPhoneNumberBeginning.SelectedIndex = 0;
+                        comboBoxPhoneNumberBeginningChangedManually = false;
                     }
                     else
                     {
                         comboBoxPhoneNumberBeginning.SelectedIndex = 1;
+                        comboBoxPhoneNumberBeginningChangedManually = false;
                     }
                 }
 
