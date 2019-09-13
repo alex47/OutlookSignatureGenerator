@@ -8,7 +8,7 @@ namespace SignatureGeneratorProgram
 {
     class SignatureGenerator
     {
-        string tempDirectory = "C:/temp/";
+        string tempDirectory = Path.GetTempPath();
 
         string signatureTemplateHtmlOriginal;
         string signatureTemplateTxtOriginal;
@@ -27,7 +27,7 @@ namespace SignatureGeneratorProgram
             signatureTemplateTxtOriginal = signatureTxt;
             signatureTemplateRtfOriginal = signatureRtf;
             
-            // Copy the company logo to a folder where the preview HTML can actually load it
+            // Copy the company logo to a folder where the preview HTML can load it
             System.IO.Directory.CreateDirectory(tempDirectory);
             companyLogo.Save(tempDirectory + "image001.png");
         }

@@ -19,7 +19,7 @@ namespace SignatureGeneratorProgram.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -72,17 +72,40 @@ namespace SignatureGeneratorProgram.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;xml xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
-        /// &lt;o:MainFile HRef=&quot;../templ.htm&quot;/&gt;
+        /// &lt;o:MainFile HRef=&quot;../%signaturename%.htm&quot;/&gt;
         /// &lt;o:File HRef=&quot;themedata.thmx&quot;/&gt;
         /// &lt;o:File HRef=&quot;colorschememapping.xml&quot;/&gt;
         /// &lt;o:File HRef=&quot;image001.png&quot;/&gt;
-        /// &lt;o:File HRef=&quot;image002.jpg&quot;/&gt;
         /// &lt;o:File HRef=&quot;filelist.xml&quot;/&gt;
         ///&lt;/xml&gt;.
         /// </summary>
         internal static string filelist {
             get {
                 return ResourceManager.GetString("filelist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;HanonPlants&gt;
+        ///
+        ///  &lt;Plant&gt;
+        ///    &lt;Continent&gt;Europe&lt;/Continent&gt;
+        ///    &lt;Country&gt;Hungary&lt;/Country&gt;
+        ///    &lt;City&gt;Székesfehérvár&lt;/City&gt;
+        ///    &lt;PlantName&gt;Alba&lt;/PlantName&gt;
+        ///    &lt;LegalName&gt;Hanon Systems Hungary Kft.&lt;/LegalName&gt;
+        ///    &lt;Address&gt;8000 Székesfehérvár, Aszalvölgyi út 9-11.&lt;/Address&gt;
+        ///    &lt;PhoneCountryCode&gt;36&lt;/PhoneCountryCode&gt;
+        ///    &lt;PhoneZoneCode&gt;22&lt;/PhoneZoneCode&gt;
+        ///    &lt;PhoneFirstHalfs&gt;
+        ///      &lt;FirstHalf&gt;530&lt;/FirstHalf&gt;
+        ///      &lt;FirstHalf&gt;549&lt;/FirstHalf&gt;
+        ///    &lt;/PhoneFir [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string HanonPlants {
+            get {
+                return ResourceManager.GetString("HanonPlants", resourceCulture);
             }
         }
         
@@ -108,7 +131,7 @@ namespace SignatureGeneratorProgram.Properties {
         ///&lt;meta name=ProgId content=Word.Document&gt;
         ///&lt;meta name=Generator content=&quot;Microsoft Word 15&quot;&gt;
         ///&lt;meta name=Originator content=&quot;Microsoft Word 15&quot;&gt;
-        ///&lt;link rel=File-List href=&quot;a_files/ [rest of string was truncated]&quot;;.
+        ///&lt;link rel=File-List href=&quot;%signatu [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string outlook_signature_template_htm {
             get {
@@ -117,8 +140,8 @@ namespace SignatureGeneratorProgram.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1250\uc1\adeff31507\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi31507\deflang1038\deflangfe1038\themelang1038\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset238\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fbidi \fswiss\fcharset238\fprq2{\*\panose 020b0604020202020204}Arial;}
-        ///{\f20\fbidi \froman\fcharset129\fprq1{\*\panose 020b0600000101010101}Gulim{\*\falt \&apos;b1\&apos;bc\&apos;b8\&apos;b2};}{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 020405030504 [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1250\uc1\adeff0\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi0\deflang1038\deflangfe1038\themelang1038\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset238\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fbidi \fswiss\fcharset238\fprq2{\*\panose 020b0604020202020204}Arial;}
+        ///{\f20\fbidi \fswiss\fcharset129\fprq2{\*\panose 020b0600000101010101}Gulim{\*\falt \&apos;a1\&apos;be?\&apos;a2\&apos;ac\&apos;a2\&apos;ad};}{\f34\fbidi \froman\fcharset238\fprq2{\*\panose 020405030 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string outlook_signature_template_rtf {
             get {
@@ -127,15 +150,20 @@ namespace SignatureGeneratorProgram.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to           ///%greeting%,        ///        ///        ///%name%
-        ///%position% | %department%
+        ///   Looks up a localized string similar to   
+        ///%greeting%
+        ///
+        ///
+        ///%name%
+        ///%position%%department%
         ///
         ///Hanon Systems Hungary. Kft
         ///8000 Székesfehérvár, Aszalvölgyi út 9-11.
-        ///T +36 20 %phone%     M %mobile%
+        ///T +36 22 %phone%     %mobile%
         ///%cdsid%@hanonsystems.com
-        ///www.hanonsystems.com        ///        ///        ///
-        ///CONFIDENTIALITY NOTICE: This e-mail message including attachments, if any, is intended only for the person or entity to which it is addressed and may contain confidential and /or privileged material. Any unauthorized review, use, disclosure or distribution is prohibited. If you are not the intended rec [rest of string was truncated]&quot;;.
+        ///www.hanonsystems.com
+        ///
+        ///.
         /// </summary>
         internal static string outlook_signature_template_txt {
             get {

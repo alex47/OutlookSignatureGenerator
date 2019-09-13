@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HanonPlants>
+
+  <!--Europe-->
+  
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Hungary</Country>
+    <City>Székesfehérvár</City>
+    <PlantName>Alba</PlantName>
+    <Entity>Hanon Systems Hungary Kft.</Entity>
+    <Address>8000 Székesfehérvár, Aszalvölgyi út 9-11.</Address>
+    <PhoneCountryCode>36</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Hungary</Country>
+    <City>Rétság</City>
+    <PlantName>Rétság</PlantName>
+    <Entity>Hanon Systems Auto Parts Hungary Kft.</Entity>
+    <Address>2651 Rétság, Ipari park 4.</Address>
+    <PhoneCountryCode>36</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Czech Republic</Country>
+    <City>Nový Jičín</City>
+    <PlantName>Autopal</PlantName>
+    <Entity>Hanon Systems Autopal Services s.r.o</Entity>
+    <Address>Lužická 14, 741 01 Nový Jičín</Address>
+    <PhoneCountryCode>420</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Czech Republic</Country>
+    <City>Nový Jičín</City>
+    <PlantName>Autopal</PlantName>
+    <Entity>Hanon Systems Autopal s.r.o</Entity>
+    <Address>Lužická 14, 741 01 Nový Jičín</Address>
+    <PhoneCountryCode>420</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Czech Republic</Country>
+    <City>Hluk</City>
+    <PlantName>Autopal</PlantName>
+    <Entity>Hanon Systems Autopal Services s.r.o</Entity>
+    <Address>Závodní 1007, 687 25 Hluk </Address>
+    <PhoneCountryCode>420</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Czech Republic</Country>
+    <City>Hluk</City>
+    <PlantName>Autopal</PlantName>
+    <Entity>Hanon Systems Autopal s.r.o</Entity>
+    <Address>Závodní 1007, 687 25 Hluk </Address>
+    <PhoneCountryCode>420</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Portugal</Country>
+    <City>Palmela</City>
+    <PlantName>Palmela</PlantName>
+    <Entity>Hanon Systems Portugal, S.A.</Entity>
+    <Address>2951-503 Palmela, Estrada Nacional 252, km 12</Address>
+    <PhoneCountryCode>351</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>United Kingdom</Country>
+    <City>Chelmsford</City>
+    <PlantName>Chelmsford</PlantName>
+    <Entity>Hanon Systems UK Ltd </Entity>
+    <Address>31 Springfield Lyons Approach, Chelmsford Business Park, Essex</Address>
+    <PhoneCountryCode>44</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>France</Country>
+    <City>Charleville</City>
+    <PlantName>Charleville</PlantName>
+    <Entity>Hanon Systems Charleville S.A.S</Entity>
+    <Address>3, avenue de l’Industrie, BP. 228, 08102 Charleville-Mézières Cedex</Address>
+    <PhoneCountryCode>33</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Italy</Country>
+    <City>Benevento</City>
+    <PlantName>Benevento</PlantName>
+    <Entity>Hanon Systems Italia Benevento srl a s.u</Entity>
+    <Address>Via Enzo Ferrari, c.da Olivola, 82100 Benevento</Address>
+    <PhoneCountryCode>39</PhoneCountryCode>
+  </Plant>
+
+  <!--America-->
+  
+  <Plant>
+    <Continent>America</Continent>
+    <Country>USA</Country>
+    <City>New York</City>
+    <PlantName>asdasd</PlantName>
+    <Entity>Hanon Systems AMERICA, PLACEHOLDER</Entity>
+    <Address>somewhere around newyork</Address>
+    <PhoneCountryCode>xxx</PhoneCountryCode>
+  </Plant>
+
+  <!--Asia-->
+  
+  <Plant>
+    <Continent>Asia</Continent>
+    <Country>India</Country>
+    <City>New Delhi</City>
+    <PlantName>asdasd</PlantName>
+    <Entity>Hanon Systems INDIA, PLACEHOLDER</Entity>
+    <Address>somewhere around india</Address>
+    <PhoneCountryCode>xxx</PhoneCountryCode>
+  </Plant>
+
+</HanonPlants>

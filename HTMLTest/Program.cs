@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SignatureGeneratorProgram
@@ -16,7 +13,13 @@ namespace SignatureGeneratorProgram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignatureGeneratorForm());
+
+            //continentsForm.ShowDialog();
+            //userDataSheetForm.ShowDialog();
+
+            Application.Run(new FormWizard());
+            //Application.Run(new FormUserDataSheet());
+            //Application.Run(new FormContinentSelection());
         }
     }
 }

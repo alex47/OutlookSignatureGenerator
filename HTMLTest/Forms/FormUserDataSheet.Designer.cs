@@ -1,6 +1,6 @@
 ﻿namespace SignatureGeneratorProgram
 {
-    partial class SignatureGeneratorForm
+    partial class FormUserDataSheet
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignatureGeneratorForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserDataSheet));
             this.webBrowserSignature = new System.Windows.Forms.WebBrowser();
             this.labelConstName = new System.Windows.Forms.Label();
             this.labelConstPhone = new System.Windows.Forms.Label();
@@ -41,11 +41,9 @@
             this.comboBoxPhoneNumberBeginning = new System.Windows.Forms.ComboBox();
             this.labelConstCountryPreNumber = new System.Windows.Forms.Label();
             this.comboBoxMobileNumberBeginning = new System.Windows.Forms.ComboBox();
-            this.buttonLanguageEnglish = new System.Windows.Forms.Button();
-            this.buttonLanguageHungarian = new System.Windows.Forms.Button();
-            this.labelConstGreeting = new System.Windows.Forms.Label();
             this.labelConstDepartmentHint = new System.Windows.Forms.Label();
             this.labelConstMobileHint = new System.Windows.Forms.Label();
+            this.labelConstGreeting = new System.Windows.Forms.Label();
             this.checkBoxGreetingHungarian = new System.Windows.Forms.CheckBox();
             this.checkBoxGreetingEnglish = new System.Windows.Forms.CheckBox();
             this.checkBoxGreetingGerman = new System.Windows.Forms.CheckBox();
@@ -60,7 +58,7 @@
             // webBrowserSignature
             // 
             this.webBrowserSignature.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.webBrowserSignature.Location = new System.Drawing.Point(0, 205);
+            this.webBrowserSignature.Location = new System.Drawing.Point(0, 204);
             this.webBrowserSignature.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserSignature.Name = "webBrowserSignature";
             this.webBrowserSignature.ScrollBarsEnabled = false;
@@ -71,7 +69,7 @@
             // 
             // labelConstName
             // 
-            this.labelConstName.Location = new System.Drawing.Point(12, 43);
+            this.labelConstName.Location = new System.Drawing.Point(12, 42);
             this.labelConstName.Name = "labelConstName";
             this.labelConstName.Size = new System.Drawing.Size(84, 13);
             this.labelConstName.TabIndex = 0;
@@ -80,7 +78,7 @@
             // 
             // labelConstPhone
             // 
-            this.labelConstPhone.Location = new System.Drawing.Point(12, 121);
+            this.labelConstPhone.Location = new System.Drawing.Point(12, 120);
             this.labelConstPhone.Name = "labelConstPhone";
             this.labelConstPhone.Size = new System.Drawing.Size(84, 13);
             this.labelConstPhone.TabIndex = 0;
@@ -89,7 +87,7 @@
             // 
             // labelConstUsername
             // 
-            this.labelConstUsername.Location = new System.Drawing.Point(12, 17);
+            this.labelConstUsername.Location = new System.Drawing.Point(12, 16);
             this.labelConstUsername.Name = "labelConstUsername";
             this.labelConstUsername.Size = new System.Drawing.Size(84, 13);
             this.labelConstUsername.TabIndex = 0;
@@ -98,7 +96,7 @@
             // 
             // labelConstMobile
             // 
-            this.labelConstMobile.Location = new System.Drawing.Point(12, 147);
+            this.labelConstMobile.Location = new System.Drawing.Point(12, 146);
             this.labelConstMobile.Name = "labelConstMobile";
             this.labelConstMobile.Size = new System.Drawing.Size(84, 13);
             this.labelConstMobile.TabIndex = 0;
@@ -107,7 +105,7 @@
             // 
             // labelConstPosition
             // 
-            this.labelConstPosition.Location = new System.Drawing.Point(12, 69);
+            this.labelConstPosition.Location = new System.Drawing.Point(12, 68);
             this.labelConstPosition.Name = "labelConstPosition";
             this.labelConstPosition.Size = new System.Drawing.Size(84, 13);
             this.labelConstPosition.TabIndex = 0;
@@ -116,7 +114,7 @@
             // 
             // labelConstDepartment
             // 
-            this.labelConstDepartment.Location = new System.Drawing.Point(12, 95);
+            this.labelConstDepartment.Location = new System.Drawing.Point(12, 94);
             this.labelConstDepartment.Name = "labelConstDepartment";
             this.labelConstDepartment.Size = new System.Drawing.Size(84, 13);
             this.labelConstDepartment.TabIndex = 0;
@@ -136,7 +134,7 @@
             // labelConstPhoneNumberBeginning
             // 
             this.labelConstPhoneNumberBeginning.AutoSize = true;
-            this.labelConstPhoneNumberBeginning.Location = new System.Drawing.Point(97, 121);
+            this.labelConstPhoneNumberBeginning.Location = new System.Drawing.Point(99, 121);
             this.labelConstPhoneNumberBeginning.Name = "labelConstPhoneNumberBeginning";
             this.labelConstPhoneNumberBeginning.Size = new System.Drawing.Size(43, 13);
             this.labelConstPhoneNumberBeginning.TabIndex = 0;
@@ -159,7 +157,7 @@
             // labelConstCountryPreNumber
             // 
             this.labelConstCountryPreNumber.AutoSize = true;
-            this.labelConstCountryPreNumber.Location = new System.Drawing.Point(112, 147);
+            this.labelConstCountryPreNumber.Location = new System.Drawing.Point(109, 147);
             this.labelConstCountryPreNumber.Name = "labelConstCountryPreNumber";
             this.labelConstCountryPreNumber.Size = new System.Drawing.Size(25, 13);
             this.labelConstCountryPreNumber.TabIndex = 10;
@@ -180,27 +178,23 @@
             this.comboBoxMobileNumberBeginning.TabStop = false;
             this.comboBoxMobileNumberBeginning.SelectedValueChanged += new System.EventHandler(this.updateHtmlPreviewPage);
             // 
-            // buttonLanguageEnglish
+            // labelConstDepartmentHint
             // 
-            this.buttonLanguageEnglish.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonLanguageEnglish.Location = new System.Drawing.Point(797, 12);
-            this.buttonLanguageEnglish.Name = "buttonLanguageEnglish";
-            this.buttonLanguageEnglish.Size = new System.Drawing.Size(75, 23);
-            this.buttonLanguageEnglish.TabIndex = 8;
-            this.buttonLanguageEnglish.Text = "English";
-            this.buttonLanguageEnglish.UseVisualStyleBackColor = true;
-            this.buttonLanguageEnglish.Click += new System.EventHandler(this.ButtonLanguageEnglish_Click);
+            this.labelConstDepartmentHint.AutoSize = true;
+            this.labelConstDepartmentHint.Location = new System.Drawing.Point(366, 94);
+            this.labelConstDepartmentHint.Name = "labelConstDepartmentHint";
+            this.labelConstDepartmentHint.Size = new System.Drawing.Size(130, 13);
+            this.labelConstDepartmentHint.TabIndex = 19;
+            this.labelConstDepartmentHint.Text = "labelConstDepartmentHint";
             // 
-            // buttonLanguageHungarian
+            // labelConstMobileHint
             // 
-            this.buttonLanguageHungarian.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonLanguageHungarian.Location = new System.Drawing.Point(797, 40);
-            this.buttonLanguageHungarian.Name = "buttonLanguageHungarian";
-            this.buttonLanguageHungarian.Size = new System.Drawing.Size(75, 23);
-            this.buttonLanguageHungarian.TabIndex = 9;
-            this.buttonLanguageHungarian.Text = "Magyar";
-            this.buttonLanguageHungarian.UseVisualStyleBackColor = true;
-            this.buttonLanguageHungarian.Click += new System.EventHandler(this.ButtonLanguageHungarian_Click);
+            this.labelConstMobileHint.AutoSize = true;
+            this.labelConstMobileHint.Location = new System.Drawing.Point(366, 146);
+            this.labelConstMobileHint.Name = "labelConstMobileHint";
+            this.labelConstMobileHint.Size = new System.Drawing.Size(106, 13);
+            this.labelConstMobileHint.TabIndex = 21;
+            this.labelConstMobileHint.Text = "labelConstMobileHint";
             // 
             // labelConstGreeting
             // 
@@ -210,24 +204,6 @@
             this.labelConstGreeting.TabIndex = 14;
             this.labelConstGreeting.Text = "labelConstGreeting";
             this.labelConstGreeting.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // labelConstDepartmentHint
-            // 
-            this.labelConstDepartmentHint.AutoSize = true;
-            this.labelConstDepartmentHint.Location = new System.Drawing.Point(366, 95);
-            this.labelConstDepartmentHint.Name = "labelConstDepartmentHint";
-            this.labelConstDepartmentHint.Size = new System.Drawing.Size(130, 13);
-            this.labelConstDepartmentHint.TabIndex = 19;
-            this.labelConstDepartmentHint.Text = "labelConstDepartmentHint";
-            // 
-            // labelConstMobileHint
-            // 
-            this.labelConstMobileHint.AutoSize = true;
-            this.labelConstMobileHint.Location = new System.Drawing.Point(366, 147);
-            this.labelConstMobileHint.Name = "labelConstMobileHint";
-            this.labelConstMobileHint.Size = new System.Drawing.Size(106, 13);
-            this.labelConstMobileHint.TabIndex = 21;
-            this.labelConstMobileHint.Text = "labelConstMobileHint";
             // 
             // checkBoxGreetingHungarian
             // 
@@ -326,11 +302,11 @@
             this.textBoxName.watermark = null;
             this.textBoxName.TextChanged += new System.EventHandler(this.updateHtmlPreviewPage);
             // 
-            // SignatureGeneratorForm
+            // FormUserDataSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 466);
+            this.ClientSize = new System.Drawing.Size(884, 465);
             this.Controls.Add(this.textBoxMobile);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxDepartment);
@@ -343,8 +319,6 @@
             this.Controls.Add(this.labelConstMobileHint);
             this.Controls.Add(this.labelConstDepartmentHint);
             this.Controls.Add(this.labelConstGreeting);
-            this.Controls.Add(this.buttonLanguageHungarian);
-            this.Controls.Add(this.buttonLanguageEnglish);
             this.Controls.Add(this.comboBoxMobileNumberBeginning);
             this.Controls.Add(this.labelConstCountryPreNumber);
             this.Controls.Add(this.comboBoxPhoneNumberBeginning);
@@ -357,10 +331,11 @@
             this.Controls.Add(this.labelConstPhone);
             this.Controls.Add(this.labelConstName);
             this.Controls.Add(this.webBrowserSignature);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "SignatureGeneratorForm";
+            this.Name = "FormUserDataSheet";
             this.Text = "Outlook Signature Generator (placeholder)";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -381,20 +356,18 @@
         private System.Windows.Forms.ComboBox comboBoxPhoneNumberBeginning;
         private System.Windows.Forms.Label labelConstCountryPreNumber;
         private System.Windows.Forms.ComboBox comboBoxMobileNumberBeginning;
-        private System.Windows.Forms.Button buttonLanguageEnglish;
-        private System.Windows.Forms.Button buttonLanguageHungarian;
-        private System.Windows.Forms.Label labelConstGreeting;
         private System.Windows.Forms.Label labelConstDepartmentHint;
         private System.Windows.Forms.Label labelConstMobileHint;
-        private System.Windows.Forms.CheckBox checkBoxGreetingHungarian;
-        private System.Windows.Forms.CheckBox checkBoxGreetingEnglish;
-        private System.Windows.Forms.CheckBox checkBoxGreetingGerman;
         private TextBoxExtended textBoxName;
         private TextBoxExtended textBoxUsername;
         private TextBoxExtended textBoxPosition;
         private TextBoxExtended textBoxDepartment;
         private TextBoxExtended textBoxPhone;
         private TextBoxExtended textBoxMobile;
+        private System.Windows.Forms.Label labelConstGreeting;
+        private System.Windows.Forms.CheckBox checkBoxGreetingHungarian;
+        private System.Windows.Forms.CheckBox checkBoxGreetingEnglish;
+        private System.Windows.Forms.CheckBox checkBoxGreetingGerman;
     }
 }
 
