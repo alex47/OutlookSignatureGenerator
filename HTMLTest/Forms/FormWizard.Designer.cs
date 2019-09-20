@@ -31,14 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormWizard));
             this.WizardPages = new SignatureGeneratorProgram.WizardPages();
             this.pageContinent = new System.Windows.Forms.TabPage();
+            this.pictureBoxContinentCompanyLogo = new System.Windows.Forms.PictureBox();
             this.labelConstContinentHint = new System.Windows.Forms.Label();
             this.pageCountry = new System.Windows.Forms.TabPage();
+            this.pictureBoxCountryCompanyLogo = new System.Windows.Forms.PictureBox();
             this.labelConstCountryHint = new System.Windows.Forms.Label();
             this.pageCity = new System.Windows.Forms.TabPage();
+            this.pictureBoxCityCompanyLogo = new System.Windows.Forms.PictureBox();
             this.labelConstCityHint = new System.Windows.Forms.Label();
             this.pageEntity = new System.Windows.Forms.TabPage();
+            this.pictureBoxEntityCompanyLogo = new System.Windows.Forms.PictureBox();
             this.labelConstEntityHint = new System.Windows.Forms.Label();
             this.pageDataSheet = new System.Windows.Forms.TabPage();
+            this.pictureBoxDataSheetCompanyLogo = new System.Windows.Forms.PictureBox();
             this.textBoxMobile = new SignatureGeneratorProgram.TextBoxExtended();
             this.textBoxPhone = new SignatureGeneratorProgram.TextBoxExtended();
             this.textBoxDepartment = new SignatureGeneratorProgram.TextBoxExtended();
@@ -59,10 +64,15 @@
             this.webBrowserSignature = new System.Windows.Forms.WebBrowser();
             this.WizardPages.SuspendLayout();
             this.pageContinent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContinentCompanyLogo)).BeginInit();
             this.pageCountry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountryCompanyLogo)).BeginInit();
             this.pageCity.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCityCompanyLogo)).BeginInit();
             this.pageEntity.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntityCompanyLogo)).BeginInit();
             this.pageDataSheet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataSheetCompanyLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // WizardPages
@@ -75,19 +85,29 @@
             this.WizardPages.Location = new System.Drawing.Point(3, 6);
             this.WizardPages.Name = "WizardPages";
             this.WizardPages.SelectedIndex = 0;
-            this.WizardPages.Size = new System.Drawing.Size(776, 486);
+            this.WizardPages.Size = new System.Drawing.Size(877, 554);
             this.WizardPages.TabIndex = 0;
             // 
             // pageContinent
             // 
             this.pageContinent.BackColor = System.Drawing.SystemColors.Control;
+            this.pageContinent.Controls.Add(this.pictureBoxContinentCompanyLogo);
             this.pageContinent.Controls.Add(this.labelConstContinentHint);
             this.pageContinent.Location = new System.Drawing.Point(4, 22);
             this.pageContinent.Name = "pageContinent";
             this.pageContinent.Padding = new System.Windows.Forms.Padding(3);
-            this.pageContinent.Size = new System.Drawing.Size(768, 460);
+            this.pageContinent.Size = new System.Drawing.Size(869, 528);
             this.pageContinent.TabIndex = 0;
             this.pageContinent.Text = "pageContinent";
+            // 
+            // pictureBoxContinentCompanyLogo
+            // 
+            this.pictureBoxContinentCompanyLogo.Image = global::SignatureGeneratorProgram.Properties.Resources.hanon_logo;
+            this.pictureBoxContinentCompanyLogo.Location = new System.Drawing.Point(702, 3);
+            this.pictureBoxContinentCompanyLogo.Name = "pictureBoxContinentCompanyLogo";
+            this.pictureBoxContinentCompanyLogo.Size = new System.Drawing.Size(170, 40);
+            this.pictureBoxContinentCompanyLogo.TabIndex = 3;
+            this.pictureBoxContinentCompanyLogo.TabStop = false;
             // 
             // labelConstContinentHint
             // 
@@ -101,12 +121,22 @@
             // pageCountry
             // 
             this.pageCountry.BackColor = System.Drawing.SystemColors.Control;
+            this.pageCountry.Controls.Add(this.pictureBoxCountryCompanyLogo);
             this.pageCountry.Controls.Add(this.labelConstCountryHint);
             this.pageCountry.Location = new System.Drawing.Point(4, 22);
             this.pageCountry.Name = "pageCountry";
-            this.pageCountry.Size = new System.Drawing.Size(768, 460);
+            this.pageCountry.Size = new System.Drawing.Size(869, 528);
             this.pageCountry.TabIndex = 4;
             this.pageCountry.Text = "pageCountry";
+            // 
+            // pictureBoxCountryCompanyLogo
+            // 
+            this.pictureBoxCountryCompanyLogo.Image = global::SignatureGeneratorProgram.Properties.Resources.hanon_logo;
+            this.pictureBoxCountryCompanyLogo.Location = new System.Drawing.Point(702, 3);
+            this.pictureBoxCountryCompanyLogo.Name = "pictureBoxCountryCompanyLogo";
+            this.pictureBoxCountryCompanyLogo.Size = new System.Drawing.Size(170, 40);
+            this.pictureBoxCountryCompanyLogo.TabIndex = 4;
+            this.pictureBoxCountryCompanyLogo.TabStop = false;
             // 
             // labelConstCountryHint
             // 
@@ -120,12 +150,22 @@
             // pageCity
             // 
             this.pageCity.BackColor = System.Drawing.SystemColors.Control;
+            this.pageCity.Controls.Add(this.pictureBoxCityCompanyLogo);
             this.pageCity.Controls.Add(this.labelConstCityHint);
             this.pageCity.Location = new System.Drawing.Point(4, 22);
             this.pageCity.Name = "pageCity";
-            this.pageCity.Size = new System.Drawing.Size(768, 460);
+            this.pageCity.Size = new System.Drawing.Size(869, 528);
             this.pageCity.TabIndex = 5;
             this.pageCity.Text = "pageCity";
+            // 
+            // pictureBoxCityCompanyLogo
+            // 
+            this.pictureBoxCityCompanyLogo.Image = global::SignatureGeneratorProgram.Properties.Resources.hanon_logo;
+            this.pictureBoxCityCompanyLogo.Location = new System.Drawing.Point(702, 3);
+            this.pictureBoxCityCompanyLogo.Name = "pictureBoxCityCompanyLogo";
+            this.pictureBoxCityCompanyLogo.Size = new System.Drawing.Size(170, 40);
+            this.pictureBoxCityCompanyLogo.TabIndex = 5;
+            this.pictureBoxCityCompanyLogo.TabStop = false;
             // 
             // labelConstCityHint
             // 
@@ -139,12 +179,22 @@
             // pageEntity
             // 
             this.pageEntity.BackColor = System.Drawing.SystemColors.Control;
+            this.pageEntity.Controls.Add(this.pictureBoxEntityCompanyLogo);
             this.pageEntity.Controls.Add(this.labelConstEntityHint);
             this.pageEntity.Location = new System.Drawing.Point(4, 22);
             this.pageEntity.Name = "pageEntity";
-            this.pageEntity.Size = new System.Drawing.Size(768, 460);
+            this.pageEntity.Size = new System.Drawing.Size(869, 528);
             this.pageEntity.TabIndex = 7;
             this.pageEntity.Text = "pageEntity";
+            // 
+            // pictureBoxEntityCompanyLogo
+            // 
+            this.pictureBoxEntityCompanyLogo.Image = global::SignatureGeneratorProgram.Properties.Resources.hanon_logo;
+            this.pictureBoxEntityCompanyLogo.Location = new System.Drawing.Point(702, 3);
+            this.pictureBoxEntityCompanyLogo.Name = "pictureBoxEntityCompanyLogo";
+            this.pictureBoxEntityCompanyLogo.Size = new System.Drawing.Size(170, 40);
+            this.pictureBoxEntityCompanyLogo.TabIndex = 6;
+            this.pictureBoxEntityCompanyLogo.TabStop = false;
             // 
             // labelConstEntityHint
             // 
@@ -158,6 +208,7 @@
             // pageDataSheet
             // 
             this.pageDataSheet.BackColor = System.Drawing.SystemColors.Control;
+            this.pageDataSheet.Controls.Add(this.pictureBoxDataSheetCompanyLogo);
             this.pageDataSheet.Controls.Add(this.textBoxMobile);
             this.pageDataSheet.Controls.Add(this.textBoxPhone);
             this.pageDataSheet.Controls.Add(this.textBoxDepartment);
@@ -178,13 +229,22 @@
             this.pageDataSheet.Controls.Add(this.webBrowserSignature);
             this.pageDataSheet.Location = new System.Drawing.Point(4, 22);
             this.pageDataSheet.Name = "pageDataSheet";
-            this.pageDataSheet.Size = new System.Drawing.Size(768, 460);
+            this.pageDataSheet.Size = new System.Drawing.Size(869, 528);
             this.pageDataSheet.TabIndex = 6;
             this.pageDataSheet.Text = "pageDataSheet";
             // 
+            // pictureBoxDataSheetCompanyLogo
+            // 
+            this.pictureBoxDataSheetCompanyLogo.Image = global::SignatureGeneratorProgram.Properties.Resources.hanon_logo;
+            this.pictureBoxDataSheetCompanyLogo.Location = new System.Drawing.Point(702, 3);
+            this.pictureBoxDataSheetCompanyLogo.Name = "pictureBoxDataSheetCompanyLogo";
+            this.pictureBoxDataSheetCompanyLogo.Size = new System.Drawing.Size(170, 40);
+            this.pictureBoxDataSheetCompanyLogo.TabIndex = 46;
+            this.pictureBoxDataSheetCompanyLogo.TabStop = false;
+            // 
             // textBoxMobile
             // 
-            this.textBoxMobile.Location = new System.Drawing.Point(155, 138);
+            this.textBoxMobile.Location = new System.Drawing.Point(175, 138);
             this.textBoxMobile.MaxLength = 20;
             this.textBoxMobile.Name = "textBoxMobile";
             this.textBoxMobile.Size = new System.Drawing.Size(205, 20);
@@ -194,7 +254,7 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(155, 112);
+            this.textBoxPhone.Location = new System.Drawing.Point(175, 112);
             this.textBoxPhone.MaxLength = 20;
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(205, 20);
@@ -204,7 +264,7 @@
             // 
             // textBoxDepartment
             // 
-            this.textBoxDepartment.Location = new System.Drawing.Point(102, 86);
+            this.textBoxDepartment.Location = new System.Drawing.Point(122, 86);
             this.textBoxDepartment.MaxLength = 60;
             this.textBoxDepartment.Name = "textBoxDepartment";
             this.textBoxDepartment.Size = new System.Drawing.Size(258, 20);
@@ -214,7 +274,7 @@
             // 
             // textBoxPosition
             // 
-            this.textBoxPosition.Location = new System.Drawing.Point(102, 60);
+            this.textBoxPosition.Location = new System.Drawing.Point(122, 60);
             this.textBoxPosition.MaxLength = 60;
             this.textBoxPosition.Name = "textBoxPosition";
             this.textBoxPosition.Size = new System.Drawing.Size(258, 20);
@@ -225,7 +285,7 @@
             // textBoxUsername
             // 
             this.textBoxUsername.Enabled = false;
-            this.textBoxUsername.Location = new System.Drawing.Point(102, 8);
+            this.textBoxUsername.Location = new System.Drawing.Point(122, 8);
             this.textBoxUsername.MaxLength = 8;
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(258, 20);
@@ -235,7 +295,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(102, 34);
+            this.textBoxName.Location = new System.Drawing.Point(122, 34);
             this.textBoxName.MaxLength = 60;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(258, 20);
@@ -246,7 +306,7 @@
             // labelConstOptional2
             // 
             this.labelConstOptional2.AutoSize = true;
-            this.labelConstOptional2.Location = new System.Drawing.Point(366, 140);
+            this.labelConstOptional2.Location = new System.Drawing.Point(386, 140);
             this.labelConstOptional2.Name = "labelConstOptional2";
             this.labelConstOptional2.Size = new System.Drawing.Size(101, 13);
             this.labelConstOptional2.TabIndex = 45;
@@ -255,7 +315,7 @@
             // labelConstOptional1
             // 
             this.labelConstOptional1.AutoSize = true;
-            this.labelConstOptional1.Location = new System.Drawing.Point(366, 88);
+            this.labelConstOptional1.Location = new System.Drawing.Point(386, 88);
             this.labelConstOptional1.Name = "labelConstOptional1";
             this.labelConstOptional1.Size = new System.Drawing.Size(101, 13);
             this.labelConstOptional1.TabIndex = 44;
@@ -264,7 +324,7 @@
             // labelPhoneCountryCode2
             // 
             this.labelPhoneCountryCode2.AutoSize = true;
-            this.labelPhoneCountryCode2.Location = new System.Drawing.Point(102, 141);
+            this.labelPhoneCountryCode2.Location = new System.Drawing.Point(122, 141);
             this.labelPhoneCountryCode2.Name = "labelPhoneCountryCode2";
             this.labelPhoneCountryCode2.Size = new System.Drawing.Size(127, 13);
             this.labelPhoneCountryCode2.TabIndex = 42;
@@ -273,7 +333,7 @@
             // labelPhoneCountryCode
             // 
             this.labelPhoneCountryCode.AutoSize = true;
-            this.labelPhoneCountryCode.Location = new System.Drawing.Point(102, 115);
+            this.labelPhoneCountryCode.Location = new System.Drawing.Point(122, 115);
             this.labelPhoneCountryCode.Name = "labelPhoneCountryCode";
             this.labelPhoneCountryCode.Size = new System.Drawing.Size(121, 13);
             this.labelPhoneCountryCode.TabIndex = 33;
@@ -281,7 +341,7 @@
             // 
             // buttonExport
             // 
-            this.buttonExport.Location = new System.Drawing.Point(285, 164);
+            this.buttonExport.Location = new System.Drawing.Point(305, 164);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(75, 23);
             this.buttonExport.TabIndex = 41;
@@ -293,7 +353,7 @@
             // 
             this.labelConstDepartment.Location = new System.Drawing.Point(12, 88);
             this.labelConstDepartment.Name = "labelConstDepartment";
-            this.labelConstDepartment.Size = new System.Drawing.Size(84, 13);
+            this.labelConstDepartment.Size = new System.Drawing.Size(104, 13);
             this.labelConstDepartment.TabIndex = 30;
             this.labelConstDepartment.Text = "labelConstDepartment";
             this.labelConstDepartment.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -302,7 +362,7 @@
             // 
             this.labelConstPosition.Location = new System.Drawing.Point(12, 62);
             this.labelConstPosition.Name = "labelConstPosition";
-            this.labelConstPosition.Size = new System.Drawing.Size(84, 13);
+            this.labelConstPosition.Size = new System.Drawing.Size(104, 13);
             this.labelConstPosition.TabIndex = 29;
             this.labelConstPosition.Text = "labelConstPosition";
             this.labelConstPosition.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -311,7 +371,7 @@
             // 
             this.labelConstMobile.Location = new System.Drawing.Point(12, 140);
             this.labelConstMobile.Name = "labelConstMobile";
-            this.labelConstMobile.Size = new System.Drawing.Size(84, 13);
+            this.labelConstMobile.Size = new System.Drawing.Size(104, 13);
             this.labelConstMobile.TabIndex = 28;
             this.labelConstMobile.Text = "labelConstMobile";
             this.labelConstMobile.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -320,7 +380,7 @@
             // 
             this.labelConstUsername.Location = new System.Drawing.Point(12, 10);
             this.labelConstUsername.Name = "labelConstUsername";
-            this.labelConstUsername.Size = new System.Drawing.Size(84, 13);
+            this.labelConstUsername.Size = new System.Drawing.Size(104, 13);
             this.labelConstUsername.TabIndex = 27;
             this.labelConstUsername.Text = "labelConstUsername";
             this.labelConstUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -329,7 +389,7 @@
             // 
             this.labelConstPhone.Location = new System.Drawing.Point(12, 114);
             this.labelConstPhone.Name = "labelConstPhone";
-            this.labelConstPhone.Size = new System.Drawing.Size(84, 13);
+            this.labelConstPhone.Size = new System.Drawing.Size(104, 13);
             this.labelConstPhone.TabIndex = 26;
             this.labelConstPhone.Text = "labelConstPhone";
             this.labelConstPhone.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -338,7 +398,7 @@
             // 
             this.labelConstName.Location = new System.Drawing.Point(12, 36);
             this.labelConstName.Name = "labelConstName";
-            this.labelConstName.Size = new System.Drawing.Size(84, 13);
+            this.labelConstName.Size = new System.Drawing.Size(104, 13);
             this.labelConstName.TabIndex = 31;
             this.labelConstName.Text = "labelConstName";
             this.labelConstName.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -346,11 +406,11 @@
             // webBrowserSignature
             // 
             this.webBrowserSignature.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.webBrowserSignature.Location = new System.Drawing.Point(0, 199);
+            this.webBrowserSignature.Location = new System.Drawing.Point(0, 204);
             this.webBrowserSignature.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserSignature.Name = "webBrowserSignature";
             this.webBrowserSignature.ScrollBarsEnabled = false;
-            this.webBrowserSignature.Size = new System.Drawing.Size(768, 261);
+            this.webBrowserSignature.Size = new System.Drawing.Size(869, 324);
             this.webBrowserSignature.TabIndex = 25;
             this.webBrowserSignature.TabStop = false;
             this.webBrowserSignature.Url = new System.Uri("", System.UriKind.Relative);
@@ -359,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 495);
+            this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.WizardPages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -370,14 +430,19 @@
             this.WizardPages.ResumeLayout(false);
             this.pageContinent.ResumeLayout(false);
             this.pageContinent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContinentCompanyLogo)).EndInit();
             this.pageCountry.ResumeLayout(false);
             this.pageCountry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCountryCompanyLogo)).EndInit();
             this.pageCity.ResumeLayout(false);
             this.pageCity.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCityCompanyLogo)).EndInit();
             this.pageEntity.ResumeLayout(false);
             this.pageEntity.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntityCompanyLogo)).EndInit();
             this.pageDataSheet.ResumeLayout(false);
             this.pageDataSheet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDataSheetCompanyLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +477,10 @@
         private System.Windows.Forms.WebBrowser webBrowserSignature;
         private System.Windows.Forms.TabPage pageEntity;
         private System.Windows.Forms.Label labelConstEntityHint;
+        private System.Windows.Forms.PictureBox pictureBoxContinentCompanyLogo;
+        private System.Windows.Forms.PictureBox pictureBoxCountryCompanyLogo;
+        private System.Windows.Forms.PictureBox pictureBoxCityCompanyLogo;
+        private System.Windows.Forms.PictureBox pictureBoxEntityCompanyLogo;
+        private System.Windows.Forms.PictureBox pictureBoxDataSheetCompanyLogo;
     }
 }

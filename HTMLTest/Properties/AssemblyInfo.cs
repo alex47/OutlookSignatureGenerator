@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Outlook Signature Generator")]
 [assembly: AssemblyDescription("Generate you Outlook signature easily")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hanon Systems")]
+[assembly: AssemblyCompany("Hanon Systems - anemeth1")]
 [assembly: AssemblyProduct("Outlook Signature Generator - Hanon Systems")]
 [assembly: AssemblyCopyright("Alex Nemeth (anemeth1) - Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.5.0.0")]
-[assembly: AssemblyFileVersion("1.5.0.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]

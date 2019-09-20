@@ -118,63 +118,63 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonfinish" xml:space="preserve">
-    <value>Finish</value>
+    <value>Kész</value>
   </data>
   <data name="hintdepartment" xml:space="preserve">
-    <value>                                                               e.g., Finance</value>
+    <value>                                                                 pl. Pénzügy</value>
   </data>
   <data name="hintmobile" xml:space="preserve">
-    <value>                                  e.g., 555 1234 5678</value>
+    <value>                                         pl. 30 123 4567</value>
   </data>
   <data name="hintname" xml:space="preserve">
-    <value>                                                          e.g., John Smith</value>
+    <value>                                                         pl. Kovács János</value>
   </data>
   <data name="hintphone" xml:space="preserve">
-    <value>                                      e.g., 555 123 456</value>
+    <value>                                        e.g., 22 530 123</value>
   </data>
   <data name="hintposition" xml:space="preserve">
-    <value>                                                         e.g., Accountant</value>
+    <value>                                                                pl. Könyvelő</value>
   </data>
   <data name="labeldepartment" xml:space="preserve">
-    <value>Department</value>
+    <value>Részleg</value>
   </data>
   <data name="labelmobile" xml:space="preserve">
-    <value>Mobile number</value>
+    <value>Mobiltelefonszám</value>
   </data>
   <data name="labelname" xml:space="preserve">
-    <value>Name</value>
+    <value>Név</value>
   </data>
   <data name="labeloptional" xml:space="preserve">
-    <value>Optional</value>
+    <value>Nem kötelező</value>
   </data>
   <data name="labelphone" xml:space="preserve">
-    <value>Phone number</value>
+    <value>Telefonszám</value>
   </data>
   <data name="labelposition" xml:space="preserve">
-    <value>Position</value>
+    <value>Beosztás</value>
   </data>
   <data name="labelusername" xml:space="preserve">
-    <value>Username</value>
+    <value>Felhasználónév</value>
   </data>
   <data name="msgdone" xml:space="preserve">
-    <value>Your Outlook signature has been successfully generated.
-Please restart Outlook.</value>
+    <value>Elkészült az új Outlook aláírásod.
+Kérlek indítsd újra az Outlookot.</value>
   </data>
   <data name="msgdonecaption" xml:space="preserve">
-    <value>Done</value>
+    <value>Kész</value>
   </data>
   <data name="msgerrorcaption" xml:space="preserve">
-    <value>Error</value>
+    <value>Hiba</value>
   </data>
   <data name="msgerrornooutlookaccount" xml:space="preserve">
-    <value>Outlook account not found.
-Please log in to Outlook and then try again.</value>
+    <value>Az Outlook fiók nem található.
+Kérlek jelentkezz be az Outlookba, majd próbáld újra.</value>
   </data>
   <data name="msgerrornooutlookprogram" xml:space="preserve">
-    <value>Outlook not found.
-Please make sure Outlook is installed.</value>
+    <value>Az Outlook nem található.
+Kérlek bizonyosodj meg róla, hogy az Outlook fel van telepítve a számítógépre.</value>
   </data>
   <data name="msgerrorrequiredfields" xml:space="preserve">
-    <value>Please fill out all required fields.</value>
+    <value>Kérlek tölsd ki az összes kötelező mezőt.</value>
   </data>
 </root>

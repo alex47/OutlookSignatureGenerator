@@ -133,13 +133,13 @@
   <data name="outlook_signature_template_htm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\signaturetemplate\outlook_signature_template.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1250</value>
   </data>
-  <data name="outlook_signature_template_rtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\signaturetemplate\outlook_signature_template.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1250</value>
-  </data>
   <data name="outlook_signature_template_txt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\signaturetemplate\outlook_signature_template.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-16</value>
   </data>
   <data name="themedata" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\signaturetemplate\outlook_signature_template_files\themedata.thmx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hanon_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\hanon_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

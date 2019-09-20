@@ -22,14 +22,14 @@ namespace SignatureGeneratorProgram.Resources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class en {
+    public class hu {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal en() {
+        internal hu() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SignatureGeneratorProgram.Resources.Languages.en", typeof(en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SignatureGeneratorProgram.Resources.Languages.hu", typeof(hu).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finish.
+        ///   Looks up a localized string similar to Kész.
         /// </summary>
         public static string buttonfinish {
             get {
@@ -70,7 +70,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                                                e.g., Finance.
+        ///   Looks up a localized string similar to                                                                  pl. Pénzügy.
         /// </summary>
         public static string hintdepartment {
             get {
@@ -79,7 +79,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                   e.g., 555 1234 5678.
+        ///   Looks up a localized string similar to                                          pl. 30 123 4567.
         /// </summary>
         public static string hintmobile {
             get {
@@ -88,7 +88,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                                           e.g., John Smith.
+        ///   Looks up a localized string similar to                                                          pl. Kovács János.
         /// </summary>
         public static string hintname {
             get {
@@ -97,7 +97,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                       e.g., 555 123 456.
+        ///   Looks up a localized string similar to                                         e.g., 22 530 123.
         /// </summary>
         public static string hintphone {
             get {
@@ -106,7 +106,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                                          e.g., Accountant.
+        ///   Looks up a localized string similar to                                                                 pl. Könyvelő.
         /// </summary>
         public static string hintposition {
             get {
@@ -115,7 +115,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Department.
+        ///   Looks up a localized string similar to Részleg.
         /// </summary>
         public static string labeldepartment {
             get {
@@ -124,7 +124,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mobile number.
+        ///   Looks up a localized string similar to Mobiltelefonszám.
         /// </summary>
         public static string labelmobile {
             get {
@@ -133,7 +133,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Név.
         /// </summary>
         public static string labelname {
             get {
@@ -142,7 +142,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Optional.
+        ///   Looks up a localized string similar to Nem kötelező.
         /// </summary>
         public static string labeloptional {
             get {
@@ -151,7 +151,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone number.
+        ///   Looks up a localized string similar to Telefonszám.
         /// </summary>
         public static string labelphone {
             get {
@@ -160,7 +160,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position.
+        ///   Looks up a localized string similar to Beosztás.
         /// </summary>
         public static string labelposition {
             get {
@@ -169,7 +169,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username.
+        ///   Looks up a localized string similar to Felhasználónév.
         /// </summary>
         public static string labelusername {
             get {
@@ -178,8 +178,8 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Outlook signature has been successfully generated.
-        ///Please restart Outlook..
+        ///   Looks up a localized string similar to Elkészült az új Outlook aláírásod.
+        ///Kérlek indítsd újra az Outlookot..
         /// </summary>
         public static string msgdone {
             get {
@@ -188,7 +188,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Done.
+        ///   Looks up a localized string similar to Kész.
         /// </summary>
         public static string msgdonecaption {
             get {
@@ -197,7 +197,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error.
+        ///   Looks up a localized string similar to Hiba.
         /// </summary>
         public static string msgerrorcaption {
             get {
@@ -206,8 +206,8 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Outlook account not found.
-        ///Please log in to Outlook and then try again..
+        ///   Looks up a localized string similar to Az Outlook fiók nem található.
+        ///Kérlek jelentkezz be az Outlookba, majd próbáld újra..
         /// </summary>
         public static string msgerrornooutlookaccount {
             get {
@@ -216,8 +216,8 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Outlook not found.
-        ///Please make sure Outlook is installed..
+        ///   Looks up a localized string similar to Az Outlook nem található.
+        ///Kérlek bizonyosodj meg róla, hogy az Outlook fel van telepítve a számítógépre..
         /// </summary>
         public static string msgerrornooutlookprogram {
             get {
@@ -226,7 +226,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill out all required fields..
+        ///   Looks up a localized string similar to Kérlek tölsd ki az összes kötelező mezőt..
         /// </summary>
         public static string msgerrorrequiredfields {
             get {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace SignatureGeneratorProgram
@@ -13,13 +14,8 @@ namespace SignatureGeneratorProgram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            //continentsForm.ShowDialog();
-            //userDataSheetForm.ShowDialog();
-
+            
             Application.Run(new FormWizard());
-            //Application.Run(new FormUserDataSheet());
-            //Application.Run(new FormContinentSelection());
         }
     }
 }

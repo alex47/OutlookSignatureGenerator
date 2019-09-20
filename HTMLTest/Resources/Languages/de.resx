@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonfinish" xml:space="preserve">
-    <value>Finish</value>
+    <value>Fertig</value>
   </data>
   <data name="hintdepartment" xml:space="preserve">
-    <value>                                                               e.g., Finance</value>
+    <value>                                                              z.B., Finanzen</value>
   </data>
   <data name="hintmobile" xml:space="preserve">
-    <value>                                  e.g., 555 1234 5678</value>
+    <value>                                   z.B., 1234 1234567</value>
   </data>
   <data name="hintname" xml:space="preserve">
-    <value>                                                          e.g., John Smith</value>
+    <value>                                                       z.B., Stefan Müller</value>
   </data>
   <data name="hintphone" xml:space="preserve">
-    <value>                                      e.g., 555 123 456</value>
+    <value>                                   z.B., 123 12345678</value>
   </data>
   <data name="hintposition" xml:space="preserve">
-    <value>                                                         e.g., Accountant</value>
+    <value>                                                           z.B., Buchhalter</value>
   </data>
   <data name="labeldepartment" xml:space="preserve">
-    <value>Department</value>
+    <value>Abteilung</value>
   </data>
   <data name="labelmobile" xml:space="preserve">
-    <value>Mobile number</value>
+    <value>Handynummer</value>
   </data>
   <data name="labelname" xml:space="preserve">
     <value>Name</value>
@@ -148,17 +148,17 @@
     <value>Optional</value>
   </data>
   <data name="labelphone" xml:space="preserve">
-    <value>Phone number</value>
+    <value>Telefonnummer</value>
   </data>
   <data name="labelposition" xml:space="preserve">
     <value>Position</value>
   </data>
   <data name="labelusername" xml:space="preserve">
-    <value>Username</value>
+    <value>Nutzername</value>
   </data>
   <data name="msgdone" xml:space="preserve">
-    <value>Your Outlook signature has been successfully generated.
-Please restart Outlook.</value>
+    <value>Ihre Outlook-Signatur wurde erfolgreich generiert.
+Bitte starten Sie Outlook neu.</value>
   </data>
   <data name="msgdonecaption" xml:space="preserve">
     <value>Done</value>
@@ -167,14 +167,14 @@ Please restart Outlook.</value>
     <value>Error</value>
   </data>
   <data name="msgerrornooutlookaccount" xml:space="preserve">
-    <value>Outlook account not found.
-Please log in to Outlook and then try again.</value>
+    <value>Outlook-Konto nicht gefunden.
+Melden Sie sich bei Outlook an und versuchen Sie es erneut.</value>
   </data>
   <data name="msgerrornooutlookprogram" xml:space="preserve">
-    <value>Outlook not found.
-Please make sure Outlook is installed.</value>
+    <value>Outlook nicht gefunden.
+Bitte stellen Sie sicher, dass Outlook installiert ist.</value>
   </data>
   <data name="msgerrorrequiredfields" xml:space="preserve">
-    <value>Please fill out all required fields.</value>
+    <value>Bitte füllen Sie alle erforderlichen Felder aus.</value>
   </data>
 </root>

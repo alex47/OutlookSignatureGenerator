@@ -22,14 +22,14 @@ namespace SignatureGeneratorProgram.Resources.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class en {
+    public class de {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal en() {
+        internal de() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SignatureGeneratorProgram.Resources.Languages.en", typeof(en).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SignatureGeneratorProgram.Resources.Languages.de", typeof(de).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finish.
+        ///   Looks up a localized string similar to Fertig.
         /// </summary>
         public static string buttonfinish {
             get {
@@ -70,7 +70,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                                                e.g., Finance.
+        ///   Looks up a localized string similar to                                                               z.B., Finanzen.
         /// </summary>
         public static string hintdepartment {
             get {
@@ -79,7 +79,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                   e.g., 555 1234 5678.
+        ///   Looks up a localized string similar to                                    z.B., 1234 1234567.
         /// </summary>
         public static string hintmobile {
             get {
@@ -88,7 +88,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                                           e.g., John Smith.
+        ///   Looks up a localized string similar to                                                        z.B., Stefan Müller.
         /// </summary>
         public static string hintname {
             get {
@@ -97,7 +97,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                       e.g., 555 123 456.
+        ///   Looks up a localized string similar to                                    z.B., 123 12345678.
         /// </summary>
         public static string hintphone {
             get {
@@ -106,7 +106,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                                          e.g., Accountant.
+        ///   Looks up a localized string similar to                                                            z.B., Buchhalter.
         /// </summary>
         public static string hintposition {
             get {
@@ -115,7 +115,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Department.
+        ///   Looks up a localized string similar to Abteilung.
         /// </summary>
         public static string labeldepartment {
             get {
@@ -124,7 +124,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mobile number.
+        ///   Looks up a localized string similar to Handynummer.
         /// </summary>
         public static string labelmobile {
             get {
@@ -151,7 +151,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone number.
+        ///   Looks up a localized string similar to Telefonnummer.
         /// </summary>
         public static string labelphone {
             get {
@@ -169,7 +169,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Username.
+        ///   Looks up a localized string similar to Nutzername.
         /// </summary>
         public static string labelusername {
             get {
@@ -178,8 +178,8 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Outlook signature has been successfully generated.
-        ///Please restart Outlook..
+        ///   Looks up a localized string similar to Ihre Outlook-Signatur wurde erfolgreich generiert.
+        ///Bitte starten Sie Outlook neu..
         /// </summary>
         public static string msgdone {
             get {
@@ -206,8 +206,8 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Outlook account not found.
-        ///Please log in to Outlook and then try again..
+        ///   Looks up a localized string similar to Outlook-Konto nicht gefunden.
+        ///Melden Sie sich bei Outlook an und versuchen Sie es erneut..
         /// </summary>
         public static string msgerrornooutlookaccount {
             get {
@@ -216,8 +216,8 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Outlook not found.
-        ///Please make sure Outlook is installed..
+        ///   Looks up a localized string similar to Outlook nicht gefunden.
+        ///Bitte stellen Sie sicher, dass Outlook installiert ist..
         /// </summary>
         public static string msgerrornooutlookprogram {
             get {
@@ -226,7 +226,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill out all required fields..
+        ///   Looks up a localized string similar to Bitte füllen Sie alle erforderlichen Felder aus..
         /// </summary>
         public static string msgerrorrequiredfields {
             get {

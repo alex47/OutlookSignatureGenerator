@@ -23,13 +23,12 @@ namespace SignatureGeneratorProgram
         XmlDocument plantsXml = new XmlDocument();
         SignatureGenerator signatureGenerator;
 
-        String clickedCountry;
-        String clickedCity;
-        String clickedEntity;
+        string[] wizardPages;
+        string[] selectedValues;
+        int currentPageIndex;
 
-        List<Button> countryButtons;
-        List<Button> cityButtons;
-        List<Button> entityButtons;
+        string nativeLegalText;
+        string englishLegalText;
 
         string doneMessage;
         string doneMessageCaption;
@@ -42,7 +41,17 @@ namespace SignatureGeneratorProgram
 
         public FormWizard()
         {
+            wizardPages = new string[] { "Continent", "Country", "City", "Entity"};
+            selectedValues = new string[wizardPages.Length + 1];
+            currentPageIndex = 0;
+
             InitializeComponent();
+
+            nativeLegalText = "";
+            englishLegalText = "CONFIDENTIALITY NOTICE: This e-mail message including attachments, if any, is intended only for the person or entity to which"
+                + "it is addressed and may contain confidential and /or privileged material. Any unauthorized review, use, disclosure or distribution is prohibited. "
+                + "If you are not the intended recipient, please contact the sender by reply e-mail and destroy all copies of the original message. "
+                + "If you are the intended recipient but do not wish to receive communications through this medium, please so advise the sender immediately.";
 
             plantsXml.LoadXml(Properties.Resources.HanonPlants);
             signatureGenerator = new SignatureGenerator();
@@ -50,7 +59,6 @@ namespace SignatureGeneratorProgram
             signatureGenerator.loadSignatureTemplates(
                 Properties.Resources.outlook_signature_template_htm,
                 Properties.Resources.outlook_signature_template_txt,
-                Properties.Resources.outlook_signature_template_rtf,
                 Properties.Resources.image001);
 
             textBoxUsername.Text = Environment.UserName.ToLower();
@@ -65,7 +73,7 @@ namespace SignatureGeneratorProgram
         private void addContinentButtons()
         {
             XmlNodeList continentList = plantsXml.DocumentElement.SelectNodes("Plant/Continent");
-            SortedSet<String> continentListUnique = new SortedSet<String>();
+            SortedSet<string> continentListUnique = new SortedSet<string>();
 
             foreach (XmlNode node in continentList)
             {
@@ -74,13 +82,16 @@ namespace SignatureGeneratorProgram
 
             int buttonIndex = 1;
 
-            foreach (String continent in continentListUnique)
+            foreach (string continent in continentListUnique)
             {
                 Button continentButton = new Button();
 
                 continentButton.Text = continent;
                 continentButton.SetBounds(9, buttonIndex * 30, 125, 23);
-                continentButton.Click += new System.EventHandler(this.buttonContinent_Click);
+                continentButton.MinimumSize = new System.Drawing.Size(125, 23);
+                continentButton.MaximumSize = new System.Drawing.Size(250, 23);
+                continentButton.AutoSize = true;
+                continentButton.Click += new System.EventHandler(this.button_Click);
 
                 this.WizardPages.GetControl(0).Controls.Add(continentButton);
 
@@ -88,146 +99,90 @@ namespace SignatureGeneratorProgram
             }
         }
 
-        private bool addCountryButtons(String selectedContinent)
+        private bool addButtonList(string selectedValue, int wizardPageIndex)
         {
-            XmlNodeList countryList = plantsXml.DocumentElement.SelectNodes("Plant");
-            SortedSet<String> countryListUnique = new SortedSet<String>();
+            XmlNodeList nodeList = plantsXml.DocumentElement.SelectNodes("Plant");
+            SortedSet<string> nodeListUnique = new SortedSet<string>();
 
-            foreach (XmlNode node in countryList)
+            foreach (XmlNode node in nodeList)
             {
-                if (node["Continent"].InnerText == selectedContinent)
+                if (node[wizardPages[wizardPageIndex - 1]].InnerText == selectedValue)
                 {
-                    countryListUnique.Add(node["Country"].InnerText);
+                    nodeListUnique.Add(node[wizardPages[wizardPageIndex]].InnerText);
                 }
             }
 
-            countryButtons = new List<Button>();
+            List<Button> buttons = new List<Button>();
 
-            foreach (String country in countryListUnique)
+            foreach (string uniqueNode in nodeListUnique)
             {
-                countryButtons.Add(new Button());    
+                buttons.Add(new Button());
 
-                countryButtons[countryButtons.Count - 1].Text = country;
-                countryButtons[countryButtons.Count - 1].SetBounds(9, countryButtons.Count * 30, 125, 23);
-                countryButtons[countryButtons.Count - 1].Click += new System.EventHandler(this.buttonCountry_Click);
+                buttons[buttons.Count - 1].Text = uniqueNode;
+                buttons[buttons.Count - 1].SetBounds(9, buttons.Count * 30, 125, 23);
+                buttons[buttons.Count - 1].MinimumSize = new System.Drawing.Size(125, 23);
+                buttons[buttons.Count - 1].MaximumSize = new System.Drawing.Size(250, 23);
+                buttons[buttons.Count - 1].AutoSize = true;
+                buttons[buttons.Count - 1].Click += new System.EventHandler(this.button_Click);
 
-                this.WizardPages.GetControl(1).Controls.Add(countryButtons[countryButtons.Count - 1]);
+                this.WizardPages.GetControl(wizardPageIndex).Controls.Add(buttons[buttons.Count - 1]);
             }
 
-            if (countryButtons.Count == 1)
+            // Set the same size for each button
+            int maxWidth = 0;
+
+            foreach (Button button in buttons)
             {
-                clickedCountry = countryButtons[0].Text;
+                if (button.Width > maxWidth)
+                {
+                    maxWidth = button.Width;
+                }
+            }
+
+            foreach (Button button in buttons)
+            {
+                button.Width = maxWidth;
+            }
+
+            if (buttons.Count == 1)
+            {
+                selectedValues[currentPageIndex] = buttons[0].Text;
                 return false;
             }
 
             return true;
         }
 
-        private bool addCityButtons(String selectedCountry)
+        private void button_Click(object sender, EventArgs e)
         {
-            XmlNodeList cityList = plantsXml.DocumentElement.SelectNodes("Plant");
-            SortedSet<String> cityListUnique = new SortedSet<String>();
-
-            foreach (XmlNode node in cityList)
-            {
-                if (node["Country"].InnerText == selectedCountry)
-                {
-                    cityListUnique.Add(node["City"].InnerText);
-                }
-            }
-
-            cityButtons = new List<Button>();
-
-            foreach (String city in cityListUnique)
-            {
-                cityButtons.Add(new Button());
-
-                cityButtons[cityButtons.Count - 1].Text = city;
-                cityButtons[cityButtons.Count - 1].SetBounds(9, cityButtons.Count * 30, 125, 23);
-                cityButtons[cityButtons.Count - 1].Click += new System.EventHandler(this.buttonCity_Click);
-
-                this.WizardPages.GetControl(2).Controls.Add(cityButtons[cityButtons.Count - 1]);
-            }
-
-            if (cityButtons.Count == 1)
-            {
-                clickedCity = cityButtons[0].Text;
-                return false;
-            }
-
-            return true;
+            Button button = (Button)sender;
+            loadPage(button.Text);
         }
 
-        private bool addEntityButtons(String selectedCountry)
+        private void loadPage(string locationValue)
         {
-            XmlNodeList EntityList = plantsXml.DocumentElement.SelectNodes("Plant");
-            SortedSet<String> EntityListUnique = new SortedSet<String>();
+            selectedValues[currentPageIndex] = locationValue;
+            currentPageIndex++;
 
-            foreach (XmlNode node in EntityList)
+            if (currentPageIndex == wizardPages.Length)
             {
-                if (node["City"].InnerText == selectedCountry)
-                {
-                    EntityListUnique.Add(node["Entity"].InnerText);
-                }
+                loadDataSheetPage();
+                return;
             }
-
-            entityButtons = new List<Button>();
-
-            foreach (String Entity in EntityListUnique)
+            
+            if (addButtonList(locationValue, currentPageIndex))
             {
-                entityButtons.Add(new Button());
-
-                entityButtons[entityButtons.Count - 1].Text = Entity;
-                entityButtons[entityButtons.Count - 1].SetBounds(9, entityButtons.Count * 30, 125, 23);
-                entityButtons[entityButtons.Count - 1].AutoSize = true;
-                entityButtons[entityButtons.Count - 1].Click += new System.EventHandler(this.buttonEntity_Click);
-
-                this.WizardPages.GetControl(3).Controls.Add(entityButtons[entityButtons.Count - 1]);
+                WizardPages.SelectTab(currentPageIndex);
             }
-
-            if (entityButtons.Count == 1)
+            else
             {
-                clickedEntity = entityButtons[0].Text;
-                return false;
+                // If there is only one choice than skip it to the next page
+                loadPage(selectedValues[currentPageIndex]);
             }
-
-            return true;
-        }
-
-        private void buttonContinent_Click(object sender, EventArgs e)
-        {
-            Button continentButton = (Button)sender;
-            loadCountryPage(continentButton.Text);
-        }
-
-        private void buttonCountry_Click(object sender, EventArgs e)
-        {
-            Button countryButton = (Button)sender;
-            loadCityPage(countryButton.Text);
-        }
-
-        private void buttonCity_Click(object sender, EventArgs e)
-        {
-            Button cityButton = (Button)sender;
-            loadEntityPage(cityButton.Text);
-        }
-
-        private void buttonEntity_Click(object sender, EventArgs e)
-        {
-            Button EntityButton = (Button)sender;
-            clickedEntity = EntityButton.Text;
-
-            loadDataSheetPage();
         }
 
         private void updateHtmlPreviewPage(object sender, EventArgs e)
         {
-            /*
-            Console.WriteLine(clickedCountry);
-            Console.WriteLine(clickedCity);
-            Console.WriteLine(clickedEntity);
-            */
-
             // Check field: CDSID
             if (textBoxUsername.TextLength == 0)
             {
@@ -278,14 +233,11 @@ namespace SignatureGeneratorProgram
                 signatureGenerator.updateSignatureValue("%phone%", labelPhoneCountryCode.Text + " " + textBoxPhone.Text);
             }
 
-            // Check field: Mobile HTML
+            // Check field: Mobile
             if (textBoxMobile.Text.Length == 0)
             {
                 // HTML
                 signatureGenerator.updateSignatureValue("<b style='mso-bidi-font-weight:normal'>M </b>%mobile%<o:p></o:p></span>", " ");
-
-                // RTF
-                signatureGenerator.updateSignatureValue(@"{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f1\fs18\cf24\insrsid602171 \hich\af1\dbch\af31505\loch\f1 M}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f1\fs18\cf24\insrsid602171 \hich\af1\dbch\af31505\loch\f1  %mobile%}", " ");
 
                 // TXT
                 signatureGenerator.updateSignatureValue("%mobile%", " ");
@@ -296,48 +248,27 @@ namespace SignatureGeneratorProgram
                 string mobilePhoneNumberText = labelPhoneCountryCode2.Text + " " + textBoxMobile.Text;
                 signatureGenerator.updateSignatureValue("<b style='mso-bidi-font-weight:normal'>M </b>%mobile%<o:p></o:p></span>", "<b style='mso-bidi-font-weight:normal'>M </b>" + mobilePhoneNumberText + "<o:p></o:p></span>");
 
-                // RTF
-                signatureGenerator.updateSignatureValue(@"{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f1\fs18\cf24\insrsid602171 \hich\af1\dbch\af31505\loch\f1 M}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f1\fs18\cf24\insrsid602171 \hich\af1\dbch\af31505\loch\f1  %mobile%}",
-                    @"{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f1\fs18\cf24\insrsid602171 \hich\af1\dbch\af31505\loch\f1 M}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f1\fs18\cf24\insrsid602171 \hich\af1\dbch\af31505\loch\f1  " + mobilePhoneNumberText + @"}");
-
                 // TXT
                 signatureGenerator.updateSignatureValue("%mobile%", "M " + mobilePhoneNumberText);
             }
 
-            /*
-            string greetingText = "";
+            // Legal text
 
-            // Check field: Greeting
-            if (checkBoxGreetingHungarian.Checked)
+            if (nativeLegalText.Length == 0)
             {
-                greetingText += checkBoxGreetingHungarian.Text;
-            }
-            if (checkBoxGreetingEnglish.Checked)
+                // HTML
+                signatureGenerator.updateSignatureValue("%legaltext_html%", englishLegalText);
+
+                // TXT
+                signatureGenerator.updateSignatureValue("%legaltext_txt%", englishLegalText);
+            } else
             {
-                if (greetingText != "")
-                {
-                    greetingText += " / ";
-                }
+                // HTML
+                signatureGenerator.updateSignatureValue("%legaltext_html%", nativeLegalText + " <br> <br> " + englishLegalText);
 
-                greetingText += checkBoxGreetingEnglish.Text;
+                // TXT
+                signatureGenerator.updateSignatureValue("%legaltext_txt%", nativeLegalText + Environment.NewLine + Environment.NewLine + englishLegalText);
             }
-            if (checkBoxGreetingGerman.Checked)
-            {
-                if (greetingText != "")
-                {
-                    greetingText += " / ";
-                }
-
-                greetingText += checkBoxGreetingGerman.Text;
-            }
-
-            if (greetingText != "")
-            {
-                greetingText += ",";
-            }
-
-            signatureGenerator.updateSignatureValue("%greeting%", greetingText);
-            */
 
             // Correct the company logo for the preview
             signatureGenerator.updateSignatureValue("%signaturename%/image001.png", signatureGenerator.signatureTempWorkingDir() + "image001.png");
@@ -345,99 +276,75 @@ namespace SignatureGeneratorProgram
             // Update preview
             webBrowserSignature.DocumentText = signatureGenerator.getSignatureHtml();
         }
-
-        private void loadCountryPage(String continent)
-        {
-            // There are more countries in this continent
-            if (addCountryButtons(continent))
-            {
-                WizardPages.SelectTab("pageCountry");
-            } else
-            {
-                loadCityPage(clickedCountry);
-            }
-        }
-
-        private void loadCityPage(String country)
-        {
-            clickedCountry = country;
-
-            // There are more cities in this country
-            if (addCityButtons(country))
-            {
-                WizardPages.SelectTab("pageCity");
-            }
-            else
-            {
-                loadEntityPage(clickedCity);
-            }
-        }
-
-        private void loadEntityPage(String city)
-        {
-            clickedCity = city;
-
-            // There are more entities in this city
-            if (addEntityButtons(city))
-            {
-                WizardPages.SelectTab("pageEntity");
-            }
-            else
-            {
-                loadDataSheetPage();
-            }
-        }
-
+        
         private void loadDataSheetPage()
         {
-            updateInterfaceLanguage(language.English);
-
             XmlNodeList plantList = plantsXml.DocumentElement.SelectNodes("Plant");
 
             foreach (XmlNode node in plantList)
             {
-                if (node["Country"].InnerText == clickedCountry && node["City"].InnerText == clickedCity && node["Entity"].InnerText == clickedEntity)
+                bool nodeFound = true;
+
+                for (int i = 0; i < wizardPages.Length; i++)
                 {
-                    signatureGenerator.updateSignatureValue("%entityname%", clickedEntity);
+                    if (node[wizardPages[i]].InnerText != selectedValues[i])
+                    {
+                        nodeFound = false;
+                    }
+                }
+
+                if (nodeFound)
+                {
+                    signatureGenerator.updateSignatureValue("%entityname%", node["Entity"].InnerText);
                     signatureGenerator.updateSignatureValue("%companyaddress%", node["Address"].InnerText);
 
-                    labelPhoneCountryCode.Text =  "+ " + node["PhoneCountryCode"].InnerText;
-                    labelPhoneCountryCode2.Text = "+ " + node["PhoneCountryCode"].InnerText;
+                    if (node["Language"] != null)
+                    {
+                        updateInterfaceLanguage(node["Language"].InnerText);
+                    }
+                    else
+                    {
+                        updateInterfaceLanguage("en");
+                    }
+
+                    if (node["NativeLegalText"] != null)
+                    {
+                        nativeLegalText = node["NativeLegalText"].InnerText;
+                    } else
+                    {
+                        nativeLegalText = "";
+                    }
+
+                    labelPhoneCountryCode.Text =  "+" + node["PhoneCountryCode"].InnerText;
+                    labelPhoneCountryCode2.Text = "+" + node["PhoneCountryCode"].InnerText;
                 }
             }
-            
+
             WizardPages.SelectTab("pageDataSheet");
             updateHtmlPreviewPage(null, null);
         }
 
-        private void updateInterfaceLanguage(language interfaceLanguage)
+        private void updateInterfaceLanguage(string languageId)
         {
             ResourceManager languageResource;
-
-            switch (interfaceLanguage)
-            {
-                case language.Hungarian:
-                case language.English:
-                default:
-                    // Fallback to English
-                    languageResource = new ResourceManager("SignatureGeneratorProgram.Resources.Languages.en", Assembly.GetExecutingAssembly());
-                    break;
-            }
+            languageResource = new ResourceManager("SignatureGeneratorProgram.Resources.Languages." + languageId, Assembly.GetExecutingAssembly());
             
-            labelConstUsername.Text = languageResource.GetString("username");
-            labelConstName.Text = languageResource.GetString("name");
-            labelConstPosition.Text = languageResource.GetString("position");
-            labelConstDepartment.Text = languageResource.GetString("department");
-            labelConstPhone.Text = languageResource.GetString("phone");
-            labelConstMobile.Text = languageResource.GetString("mobile");
-            labelConstOptional1.Text = languageResource.GetString("optional");
-            labelConstOptional2.Text = languageResource.GetString("optional");
+            labelConstUsername.Text = languageResource.GetString("labelusername");
+            labelConstName.Text = languageResource.GetString("labelname");
+            labelConstPosition.Text = languageResource.GetString("labelposition");
+            labelConstDepartment.Text = languageResource.GetString("labeldepartment");
+            labelConstPhone.Text = languageResource.GetString("labelphone");
+            labelConstMobile.Text = languageResource.GetString("labelmobile");
+            labelConstOptional1.Text = languageResource.GetString("labeloptional");
+            labelConstOptional2.Text = languageResource.GetString("labeloptional");
 
             textBoxName.watermark = languageResource.GetString("hintname");
             textBoxPosition.watermark = languageResource.GetString("hintposition");
             textBoxDepartment.watermark = languageResource.GetString("hintdepartment");
             textBoxPhone.watermark = languageResource.GetString("hintphone");
             textBoxMobile.watermark = languageResource.GetString("hintmobile");
+
+            buttonExport.Text = languageResource.GetString("buttonfinish");
 
             doneMessage = languageResource.GetString("msgdone");
             doneMessageCaption = languageResource.GetString("msgdonecaption");
@@ -448,7 +355,49 @@ namespace SignatureGeneratorProgram
         }
 
         private void buttonExport_Click(object sender, EventArgs e)
-        {            
+        {
+            if (!checkFields())
+            {
+                return;
+            }
+
+            buttonExport.Enabled = false;
+            Cursor.Current = Cursors.WaitCursor;
+
+            // Set the default signature for Outlook in the registry
+            // Throw an error if we can't find the Outlook account for the specified username locally
+            int registryResult = signatureGenerator.updateRegistry(textBoxUsername.Text + "_generated_signature", textBoxUsername.Text + emailSuffix);
+
+            switch (registryResult)
+            {
+                case 0:
+                    // Everything went correctly
+                    signatureGenerator.exportSignature(textBoxUsername.Text + "_generated_signature");
+
+                    MessageBox.Show(doneMessage, doneMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                    break;
+
+                case 1:
+                    // Outlook account not found
+                    MessageBox.Show(errorMessageOutlookAccount, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                case 2:
+                    // Outlook not found
+                    MessageBox.Show(errorMessageOutlookProgram, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+
+                default:
+                    break;
+            }
+
+            buttonExport.Enabled = true;
+            Cursor.Current = Cursors.Arrow;
+        }
+
+        private bool checkFields()
+        {
             // Check if all required fields are filled
             bool requiredFieldIsEmpty = false;
             textBoxName.noHighlight();
@@ -474,7 +423,7 @@ namespace SignatureGeneratorProgram
                 textBoxPosition.highlight();
             }
 
-            if (textBoxPhone.Text.Length < 3)
+            if (string.IsNullOrEmpty(textBoxPhone.Text))
             {
                 requiredFieldIsEmpty = true;
                 textBoxPhone.highlight();
@@ -483,35 +432,11 @@ namespace SignatureGeneratorProgram
             if (requiredFieldIsEmpty)
             {
                 MessageBox.Show(errorMessageRequiredFields, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
 
-            // Set the default signature for Outlook in the registry
-            // Throw an error if we can't find the Outlook account for the specified username locally
-
-            int registryResult = signatureGenerator.updateRegistry(textBoxUsername.Text + "_generated_signature", textBoxUsername.Text + emailSuffix);
-
-            switch (registryResult)
-            {
-                case 0:
-                    // Everything went correctly
-                    signatureGenerator.exportSignature(textBoxUsername.Text + "_generated_signature");
-
-                    MessageBox.Show(doneMessage, doneMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();
-                    break;
-
-                case 1:
-                    MessageBox.Show(errorMessageOutlookAccount, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-
-                case 2:
-                    MessageBox.Show(errorMessageOutlookProgram, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-
-                default:
-                    break;
-            }            
+            return true;
         }
+        
     }
 }

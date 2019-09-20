@@ -86,22 +86,36 @@ namespace SignatureGeneratorProgram.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hanon_logo {
+            get {
+                object obj = ResourceManager.GetObject("hanon_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;HanonPlants&gt;
-        ///
+        ///  
+        ///  &lt;!--Europe--&gt;
+        ///  
         ///  &lt;Plant&gt;
         ///    &lt;Continent&gt;Europe&lt;/Continent&gt;
         ///    &lt;Country&gt;Hungary&lt;/Country&gt;
         ///    &lt;City&gt;Székesfehérvár&lt;/City&gt;
-        ///    &lt;PlantName&gt;Alba&lt;/PlantName&gt;
-        ///    &lt;LegalName&gt;Hanon Systems Hungary Kft.&lt;/LegalName&gt;
+        ///    &lt;Entity&gt;Hanon Systems Hungary Kft.&lt;/Entity&gt;
         ///    &lt;Address&gt;8000 Székesfehérvár, Aszalvölgyi út 9-11.&lt;/Address&gt;
         ///    &lt;PhoneCountryCode&gt;36&lt;/PhoneCountryCode&gt;
-        ///    &lt;PhoneZoneCode&gt;22&lt;/PhoneZoneCode&gt;
-        ///    &lt;PhoneFirstHalfs&gt;
-        ///      &lt;FirstHalf&gt;530&lt;/FirstHalf&gt;
-        ///      &lt;FirstHalf&gt;549&lt;/FirstHalf&gt;
-        ///    &lt;/PhoneFir [rest of string was truncated]&quot;;.
+        ///    &lt;Language&gt;hu&lt;/Language&gt;
+        ///  &lt;/Plant&gt;
+        ///
+        ///  &lt;Plant&gt;
+        ///    &lt;Continent&gt;Europe&lt;/Continent&gt;
+        ///    &lt;Country&gt;Hungary&lt;/Country&gt;
+        ///    &lt;City&gt;Rétság&lt;/City&gt;
+        ///    &lt;Entity&gt;Ha [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string HanonPlants {
             get {
@@ -140,30 +154,19 @@ namespace SignatureGeneratorProgram.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1250\uc1\adeff0\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi0\deflang1038\deflangfe1038\themelang1038\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset238\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fbidi \fswiss\fcharset238\fprq2{\*\panose 020b0604020202020204}Arial;}
-        ///{\f20\fbidi \fswiss\fcharset129\fprq2{\*\panose 020b0600000101010101}Gulim{\*\falt \&apos;a1\&apos;be?\&apos;a2\&apos;ac\&apos;a2\&apos;ad};}{\f34\fbidi \froman\fcharset238\fprq2{\*\panose 020405030 [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string outlook_signature_template_rtf {
-            get {
-                return ResourceManager.GetString("outlook_signature_template_rtf", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to   
-        ///%greeting%
         ///
         ///
         ///%name%
         ///%position%%department%
         ///
-        ///Hanon Systems Hungary. Kft
-        ///8000 Székesfehérvár, Aszalvölgyi út 9-11.
-        ///T +36 22 %phone%     %mobile%
+        ///%entityname%
+        ///%companyaddress%
+        ///T %phone%     %mobile%
         ///%cdsid%@hanonsystems.com
         ///www.hanonsystems.com
         ///
-        ///.
+        ///%legaltext_txt%.
         /// </summary>
         internal static string outlook_signature_template_txt {
             get {

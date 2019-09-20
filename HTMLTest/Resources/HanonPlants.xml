@@ -1,33 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <HanonPlants>
-
+  
   <!--Europe-->
   
   <Plant>
     <Continent>Europe</Continent>
     <Country>Hungary</Country>
     <City>Székesfehérvár</City>
-    <PlantName>Alba</PlantName>
     <Entity>Hanon Systems Hungary Kft.</Entity>
     <Address>8000 Székesfehérvár, Aszalvölgyi út 9-11.</Address>
     <PhoneCountryCode>36</PhoneCountryCode>
+    <Language>hu</Language>
   </Plant>
 
   <Plant>
     <Continent>Europe</Continent>
     <Country>Hungary</Country>
     <City>Rétság</City>
-    <PlantName>Rétság</PlantName>
     <Entity>Hanon Systems Auto Parts Hungary Kft.</Entity>
     <Address>2651 Rétság, Ipari park 4.</Address>
     <PhoneCountryCode>36</PhoneCountryCode>
+    <Language>hu</Language>
+  </Plant>
+  
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Bulgaria</Country>
+    <City>Stryama</City>
+    <Entity>Hanon Systems Plovdiv EOOD</Entity>
+    <Address>Industrial Zone Rakovski, 4142 Stryama</Address>
+    <PhoneCountryCode>359</PhoneCountryCode>
+    <NativeLegalText>Съдържанието на този е-мейл и всички прикачени файлове са предназначени само за посочения му адресат и представляват поверителна информация или търговска тайна, поради което не подлежат на разпространение. Освен ако не сте посоченият адресат или негов пълномощник не може да разкривате, използвате или копирате съдържанието на това електронно писмо. Ако сте получили това писмо по погрешка, моля, свържете се с подателя му, след което незабавно изтрийте полученото писмо. „ХАНОН СИСТЕМС ПЛОВДИВ“ ЕООД не поема отговорност за съдържанието на това съобщение. Цялата кореспонденция, съдържащи се в това електронно писмо, не представлява официално и пълно становище на дружеството, а е част от процес по изготвяне на оферта, водене на преговори или е мнение единствено на автора, освен ако изрично не е посочено друго. Всички правнообвързващи отношения следва да се договорят чрез законните представители в писмен вид.
+Ханон Системс Пловдив ЕООД | BG175425233 | Индустриална Зона Раковски | с. Стряма | общ. Раковски | обл. Пловдив
+    </NativeLegalText>      
   </Plant>
 
   <Plant>
     <Continent>Europe</Continent>
     <Country>Czech Republic</Country>
     <City>Nový Jičín</City>
-    <PlantName>Autopal</PlantName>
     <Entity>Hanon Systems Autopal Services s.r.o</Entity>
     <Address>Lužická 14, 741 01 Nový Jičín</Address>
     <PhoneCountryCode>420</PhoneCountryCode>
@@ -37,7 +48,6 @@
     <Continent>Europe</Continent>
     <Country>Czech Republic</Country>
     <City>Nový Jičín</City>
-    <PlantName>Autopal</PlantName>
     <Entity>Hanon Systems Autopal s.r.o</Entity>
     <Address>Lužická 14, 741 01 Nový Jičín</Address>
     <PhoneCountryCode>420</PhoneCountryCode>
@@ -47,7 +57,6 @@
     <Continent>Europe</Continent>
     <Country>Czech Republic</Country>
     <City>Hluk</City>
-    <PlantName>Autopal</PlantName>
     <Entity>Hanon Systems Autopal Services s.r.o</Entity>
     <Address>Závodní 1007, 687 25 Hluk </Address>
     <PhoneCountryCode>420</PhoneCountryCode>
@@ -57,7 +66,6 @@
     <Continent>Europe</Continent>
     <Country>Czech Republic</Country>
     <City>Hluk</City>
-    <PlantName>Autopal</PlantName>
     <Entity>Hanon Systems Autopal s.r.o</Entity>
     <Address>Závodní 1007, 687 25 Hluk </Address>
     <PhoneCountryCode>420</PhoneCountryCode>
@@ -67,7 +75,6 @@
     <Continent>Europe</Continent>
     <Country>Portugal</Country>
     <City>Palmela</City>
-    <PlantName>Palmela</PlantName>
     <Entity>Hanon Systems Portugal, S.A.</Entity>
     <Address>2951-503 Palmela, Estrada Nacional 252, km 12</Address>
     <PhoneCountryCode>351</PhoneCountryCode>
@@ -75,19 +82,27 @@
 
   <Plant>
     <Continent>Europe</Continent>
+    <Country>Slovakia</Country>
+    <City>Ilava</City>
+    <Entity>Hanon Systems Slovakia s.r.o.</Entity>
+    <Address>ul. Ľudovíta Štúra 1033/78, 019 01 Ilava</Address>
+    <PhoneCountryCode>421</PhoneCountryCode>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
     <Country>United Kingdom</Country>
     <City>Chelmsford</City>
-    <PlantName>Chelmsford</PlantName>
     <Entity>Hanon Systems UK Ltd </Entity>
     <Address>31 Springfield Lyons Approach, Chelmsford Business Park, Essex</Address>
     <PhoneCountryCode>44</PhoneCountryCode>
+    <Language>en</Language>
   </Plant>
 
   <Plant>
     <Continent>Europe</Continent>
     <Country>France</Country>
     <City>Charleville</City>
-    <PlantName>Charleville</PlantName>
     <Entity>Hanon Systems Charleville S.A.S</Entity>
     <Address>3, avenue de l’Industrie, BP. 228, 08102 Charleville-Mézières Cedex</Address>
     <PhoneCountryCode>33</PhoneCountryCode>
@@ -95,9 +110,18 @@
 
   <Plant>
     <Continent>Europe</Continent>
+    <Country>Germany</Country>
+    <City>Kerpen</City>
+    <Entity>Hanon Systems Deutschland GmbH</Entity>
+    <Address>Visteonstrasse 4-10, D-50170 Kerpen</Address>
+    <PhoneCountryCode>49</PhoneCountryCode>
+    <Language>de</Language>
+  </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
     <Country>Italy</Country>
     <City>Benevento</City>
-    <PlantName>Benevento</PlantName>
     <Entity>Hanon Systems Italia Benevento srl a s.u</Entity>
     <Address>Via Enzo Ferrari, c.da Olivola, 82100 Benevento</Address>
     <PhoneCountryCode>39</PhoneCountryCode>
@@ -108,23 +132,30 @@
   <Plant>
     <Continent>America</Continent>
     <Country>USA</Country>
-    <City>New York</City>
-    <PlantName>asdasd</PlantName>
-    <Entity>Hanon Systems AMERICA, PLACEHOLDER</Entity>
-    <Address>somewhere around newyork</Address>
-    <PhoneCountryCode>xxx</PhoneCountryCode>
+    <City>Placeholder american city</City>
+    <Entity>Hanon Systems AMERICA, PLACEHOLDER - please send American signatures to anemeth1@hanonsystems.com</Entity>
+    <Address>Placeholder street, 001</Address>
+    <PhoneCountryCode>555</PhoneCountryCode>
+    <Language>en</Language>
   </Plant>
 
   <!--Asia-->
-  
+
   <Plant>
     <Continent>Asia</Continent>
     <Country>India</Country>
-    <City>New Delhi</City>
-    <PlantName>asdasd</PlantName>
-    <Entity>Hanon Systems INDIA, PLACEHOLDER</Entity>
-    <Address>somewhere around india</Address>
-    <PhoneCountryCode>xxx</PhoneCountryCode>
+    <City>Placeholder indian city</City>
+    <Entity>Hanon Systems INDIA, PLACEHOLDER - please send Indian signatures to anemeth1@hanonsystems.com</Entity>
+    <Address>Placeholder street, 001</Address>
+    <PhoneCountryCode>123</PhoneCountryCode>
   </Plant>
 
+  <Plant>
+    <Continent>Asia</Continent>
+    <Country>Japan</Country>
+    <City>Yokohama</City>
+    <Entity>Hanon Systems Japan Ltd.</Entity>
+    <Address>Kanagawa, 220-0022, 6-145 Hanasaki-cho, Nishi-ku</Address>
+    <PhoneCountryCode>81</PhoneCountryCode>
+  </Plant>
 </HanonPlants>
