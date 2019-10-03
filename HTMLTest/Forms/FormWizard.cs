@@ -117,11 +117,10 @@ namespace SignatureGeneratorProgram
             foreach (string uniqueNode in nodeListUnique)
             {
                 buttons.Add(new Button());
-
-                buttons[buttons.Count - 1].Text = uniqueNode;
-                buttons[buttons.Count - 1].SetBounds(9, buttons.Count * 30, 125, 23);
-                buttons[buttons.Count - 1].MinimumSize = new System.Drawing.Size(125, 23);
-                buttons[buttons.Count - 1].MaximumSize = new System.Drawing.Size(250, 23);
+                
+                buttons[buttons.Count - 1].Text = uniqueNode;         
+                buttons[buttons.Count - 1].MinimumSize = new System.Drawing.Size(125, 0);
+                buttons[buttons.Count - 1].MaximumSize = new System.Drawing.Size(250, 0);
                 buttons[buttons.Count - 1].AutoSize = true;
                 buttons[buttons.Count - 1].Click += new System.EventHandler(this.button_Click);
 
@@ -129,19 +128,39 @@ namespace SignatureGeneratorProgram
             }
 
             // Set the same size for each button
-            int maxWidth = 0;
+            int newButtonWidth = 0;
 
             foreach (Button button in buttons)
             {
-                if (button.Width > maxWidth)
+                if (button.Width > newButtonWidth)
                 {
-                    maxWidth = button.Width;
+                    newButtonWidth = button.Width;
                 }
             }
 
+            int newButtonHeight = buttons[0].Height;
+            int newButtonHeightRequired = newButtonHeight + 7;
+            int newButtonWidthRequired = newButtonWidth + 7;
+            
+            int columnIndex = 0;
+            int rowIndex = 0;
+
+            // Move the buttons to the correct positions
             foreach (Button button in buttons)
             {
-                button.Width = maxWidth;
+                if ((int)((rowIndex + 2) * newButtonHeightRequired) > pageContinent.Height)
+                {
+                    columnIndex++;
+                    rowIndex = 0;
+                }
+
+                int newButtonXPosition = 9 + (columnIndex * newButtonWidthRequired);
+                int newButtonYPosition = newButtonHeightRequired + (rowIndex * newButtonHeightRequired);
+
+                button.SetBounds(newButtonXPosition, newButtonYPosition, newButtonWidth, newButtonHeight);
+                button.Location = new System.Drawing.Point(newButtonXPosition, newButtonYPosition);
+
+                rowIndex++;
             }
 
             if (buttons.Count == 1)
@@ -244,8 +263,9 @@ namespace SignatureGeneratorProgram
             }
             else
             {
-                // HTML
                 string mobilePhoneNumberText = labelPhoneCountryCode2.Text + " " + textBoxMobile.Text;
+
+                // HTML
                 signatureGenerator.updateSignatureValue("<b style='mso-bidi-font-weight:normal'>M </b>%mobile%<o:p></o:p></span>", "<b style='mso-bidi-font-weight:normal'>M </b>" + mobilePhoneNumberText + "<o:p></o:p></span>");
 
                 // TXT
@@ -253,7 +273,6 @@ namespace SignatureGeneratorProgram
             }
 
             // Legal text
-
             if (nativeLegalText.Length == 0)
             {
                 // HTML
@@ -315,6 +334,11 @@ namespace SignatureGeneratorProgram
                         nativeLegalText = "";
                     }
 
+                    if (node["EnglishLegalText"] != null)
+                    {
+                        englishLegalText = node["EnglishLegalText"].InnerText;
+                    }
+
                     labelPhoneCountryCode.Text =  "+" + node["PhoneCountryCode"].InnerText;
                     labelPhoneCountryCode2.Text = "+" + node["PhoneCountryCode"].InnerText;
                 }
@@ -365,26 +389,22 @@ namespace SignatureGeneratorProgram
             Cursor.Current = Cursors.WaitCursor;
 
             // Set the default signature for Outlook in the registry
-            // Throw an error if we can't find the Outlook account for the specified username locally
-            int registryResult = signatureGenerator.updateRegistry(textBoxUsername.Text + "_generated_signature", textBoxUsername.Text + emailSuffix);
+            SignatureGenerator.ExportReturnCode registryResult = signatureGenerator.updateRegistry(textBoxUsername.Text + "_generated_signature", textBoxUsername.Text + emailSuffix);
 
             switch (registryResult)
             {
-                case 0:
-                    // Everything went correctly
+                case SignatureGenerator.ExportReturnCode.Success:
                     signatureGenerator.exportSignature(textBoxUsername.Text + "_generated_signature");
 
                     MessageBox.Show(doneMessage, doneMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Application.Exit();
                     break;
 
-                case 1:
-                    // Outlook account not found
+                case SignatureGenerator.ExportReturnCode.AccountNotFound:
                     MessageBox.Show(errorMessageOutlookAccount, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
 
-                case 2:
-                    // Outlook not found
+                case SignatureGenerator.ExportReturnCode.OutlookNotFound:
                     MessageBox.Show(errorMessageOutlookProgram, errorMessageCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
 

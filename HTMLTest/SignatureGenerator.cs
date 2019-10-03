@@ -19,11 +19,18 @@ namespace SignatureGeneratorProgram
         // id, value
         Dictionary<string, string> signatureValues = new Dictionary<string, string>();
 
+        public enum ExportReturnCode
+        {
+            Success,
+            AccountNotFound,
+            OutlookNotFound
+        }
+
         public void loadSignatureTemplates(string signatureHtml, string signatureTxt, System.Drawing.Bitmap companyLogo)
         {
             signatureTemplateHtmlOriginal = signatureHtml;
             signatureTemplateTxt = signatureTxt;
-
+            
             // Copy the company logo to a folder where the preview HTML can load it
             System.IO.Directory.CreateDirectory(tempDirectory);
             companyLogo.Save(tempDirectory + "image001.png");
@@ -69,7 +76,7 @@ namespace SignatureGeneratorProgram
         // returns 0 if success
         // returns 1 if account not found
         // returns 2 if outlook not found
-        public int updateRegistry(string signatureName, string email)
+        public ExportReturnCode updateRegistry(string signatureName, string email)
         {
             string outlookVersionString = "";
             object outlookVersionObj = Registry.GetValue(@"HKEY_CLASSES_ROOT\Outlook.Application\CurVer", "", "0");
@@ -81,11 +88,11 @@ namespace SignatureGeneratorProgram
 
             if (String.IsNullOrEmpty(outlookVersionString))
             {
-                return 2;
+                return ExportReturnCode.OutlookNotFound;
             }
 
             int outlookVersion = Convert.ToInt32(outlookVersionString.Substring(outlookVersionString.LastIndexOf(".") + 1));
-            int accountFound = 1;
+            ExportReturnCode accountFound = ExportReturnCode.AccountNotFound;
 
             string outlookProfilePath;
 
@@ -104,7 +111,7 @@ namespace SignatureGeneratorProgram
 
             if (outlookProfileKeys == null)
             {
-                return 1;
+                return ExportReturnCode.AccountNotFound;
             }
 
             string[] outlookProfiles = outlookProfileKeys.GetSubKeyNames();
@@ -117,7 +124,7 @@ namespace SignatureGeneratorProgram
 
                 if (outlookAccountKeys == null)
                 {
-                    return 1;
+                    return ExportReturnCode.AccountNotFound;
                 }
 
                 string[] outlookAccounts = outlookAccountKeys.GetSubKeyNames();
@@ -135,13 +142,13 @@ namespace SignatureGeneratorProgram
                             Registry.SetValue(outlookAccountIter, "Reply-Forward Signature", signatureName, RegistryValueKind.String);
                             Registry.SetValue(outlookAccountIter, "Reply-Forward", signatureName, RegistryValueKind.String);
 
-                            accountFound = 0;
+                            accountFound = ExportReturnCode.Success;
                             break;
                         }
                     }
                 }
             }
-
+            
             return accountFound;
         }
 

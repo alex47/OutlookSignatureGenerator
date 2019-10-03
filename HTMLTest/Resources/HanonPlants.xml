@@ -1,5 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <HanonPlants>
+
+  
+  <!-- Template entry
+  Copy this to add a new one to the list
+  
+  <Plant>
+    <Continent>CONTINENT</Continent>
+    <Country>COUNTRY</Country>
+    <City>CITY</City>
+    <Entity>ENTITY</Entity>
+    <Address>ADDRESS</Address>
+    <PhoneCountryCode>PREFIX NUMBER</PhoneCountryCode>
+    <Language>(OPTIONAL) TWO CHARACTER CODE OF THE LANGUAGE IF THE LANGUAGE FILE EXISTS</Language>
+    <NativeLegalText>(OPTIONAL) NATIVE LEGAL TEXT</NativeLegalText>
+    <EnglishLegalText>(OPTIONAL) ENGLISH LEGAL TEXT - USE ONLY IF IT IS DIFFERENT FROM THE DEFAULT ENGLISH LEGAL TEXT</EnglishLegalText>
+  </Plant>
+  -->
+  
   
   <!--Europe-->
   
@@ -22,6 +40,16 @@
     <PhoneCountryCode>36</PhoneCountryCode>
     <Language>hu</Language>
   </Plant>
+
+  <Plant>
+    <Continent>Europe</Continent>
+    <Country>Hungary</Country>
+    <City>Pécs</City>
+    <Entity>Hanon Systems Hungary Kft.</Entity>
+    <Address>7621 Pécs, Mária u. 9.</Address>
+    <PhoneCountryCode>36</PhoneCountryCode>
+    <Language>hu</Language>
+  </Plant>
   
   <Plant>
     <Continent>Europe</Continent>
@@ -30,9 +58,8 @@
     <Entity>Hanon Systems Plovdiv EOOD</Entity>
     <Address>Industrial Zone Rakovski, 4142 Stryama</Address>
     <PhoneCountryCode>359</PhoneCountryCode>
-    <NativeLegalText>Съдържанието на този е-мейл и всички прикачени файлове са предназначени само за посочения му адресат и представляват поверителна информация или търговска тайна, поради което не подлежат на разпространение. Освен ако не сте посоченият адресат или негов пълномощник не може да разкривате, използвате или копирате съдържанието на това електронно писмо. Ако сте получили това писмо по погрешка, моля, свържете се с подателя му, след което незабавно изтрийте полученото писмо. „ХАНОН СИСТЕМС ПЛОВДИВ“ ЕООД не поема отговорност за съдържанието на това съобщение. Цялата кореспонденция, съдържащи се в това електронно писмо, не представлява официално и пълно становище на дружеството, а е част от процес по изготвяне на оферта, водене на преговори или е мнение единствено на автора, освен ако изрично не е посочено друго. Всички правнообвързващи отношения следва да се договорят чрез законните представители в писмен вид.
-Ханон Системс Пловдив ЕООД | BG175425233 | Индустриална Зона Раковски | с. Стряма | общ. Раковски | обл. Пловдив
-    </NativeLegalText>      
+    <NativeLegalText>Съдържанието на този е-мейл и всички прикачени файлове са предназначени само за посочения му адресат и представляват поверителна информация или търговска тайна, поради което не подлежат на разпространение. Освен ако не сте посоченият адресат или негов пълномощник не може да разкривате, използвате или копирате съдържанието на това електронно писмо. Ако сте получили това писмо по погрешка, моля, свържете се с подателя му, след което незабавно изтрийте полученото писмо. „ХАНОН СИСТЕМС ПЛОВДИВ“ ЕООД не поема отговорност за съдържанието на това съобщение. Цялата кореспонденция, съдържащи се в това електронно писмо, не представлява официално и пълно становище на дружеството, а е част от процес по изготвяне на оферта, водене на преговори или е мнение единствено на автора, освен ако изрично не е посочено друго. Всички правнообвързващи отношения следва да се договорят чрез законните представители в писмен вид. Ханон Системс Пловдив ЕООД | BG175425233 | Индустриална Зона Раковски | с. Стряма | общ. Раковски | обл. Пловдив</NativeLegalText>
+    <EnglishLegalText>The contents of this e-mail and any attachments are intended for the named addressee only and may be confidential, privileged or otherwise exempt from disclosure. Unless you are the named addressee or are authorized to receive the e-mail of the named addressee you may not disclose, use or copy the contents of the e-mail. If you received the e-mail in error, please contact the sender immediately and then delete the e-mail. HANON SYSTEMS PLOVDIV EOOD does not accept responsibility for this message and any views or opinions contained in this e-mail are solely those of the author unless expressly stated otherwise.</EnglishLegalText>
   </Plant>
 
   <Plant>
@@ -106,6 +133,7 @@
     <Entity>Hanon Systems Charleville S.A.S</Entity>
     <Address>3, avenue de l’Industrie, BP. 228, 08102 Charleville-Mézières Cedex</Address>
     <PhoneCountryCode>33</PhoneCountryCode>
+    <NativeLegalText>AVIS DE CONFIDENTIALITÉ : Ce message électronique, y compris les pièces jointes, le cas échéant, est destiné uniquement à la personne ou à l'entité à laquelle il est adressé et peut contenir des informations confidentielles et/ou privilégiées. Toute révision, utilisation, divulgation ou distribution non autorisée est interdite. Si vous n'êtes pas le destinataire prévu, veuillez contacter l'expéditeur par courriel de réponse et détruire toutes les copies du message original. Si vous êtes le destinataire prévu mais que vous ne souhaitez pas recevoir de communications par ce moyen, veuillez en aviser immédiatement l'expéditeur.</NativeLegalText>
   </Plant>
 
   <Plant>

@@ -97,7 +97,7 @@ namespace SignatureGeneratorProgram.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to                                         e.g., 22 530 123.
+        ///   Looks up a localized string similar to                                            pl. 22 530 123.
         /// </summary>
         public static string hintphone {
             get {
